@@ -1,0 +1,108 @@
+"general.action.create" = "Create";
+"general.action.save" = "Save";
+"general.action.cancel" = "Cancel";
+"general.action.add" = "Add";
+"general.action.remove" = "Remove";
+"general.action.edit" = "Edit";
+"general.action.delete" = "Delete";
+"general.action.signUp" = "Sign up";
+"general.action.signIn" = "Sign in";
+"general.action.signOut" = "Sign out";
+"general.action.search" = "Search";
+"general.action.close" = "Close";
+"general.action.retry" = "Retry";
+"general.action.refresh" = "Refresh";
+"general.action.select" = "Select";
+"general.short.somethingWentWrong" = "Error";
+"general.date" = "Date";
+"general.done" = "Done";
+"general.search" = "Search";
+"general.registration" = "Registration";
+"general.logIn" = "Log in";
+"general.username" = "Username";
+"general.password" = "Password";
+"general.email" = "Email";
+"general.name" = "Name";
+"general.username" = "Username";
+"general.somethingWentWrong" = "Something went wrong";
+"general.nothingFound" = "Nothing found";
+"general.users" = "Users";
+
+"domain.creditor" = "Creditor";
+"domain.borrower" = "Borrower";
+"domain.sum" = "Sum";
+"domain.notes" = "Notes";
+"domain.contacts" = "Contacts";
+"domain.transfer" = "Transfer";
+"domain.transferGroup" = "Transfer group";
+
+"login.forgetPassword" = "Forget password?";
+
+"registration.displayName" = "Display name";
+"registration.requiredFields" = "Required fields";
+"registration.optionalFields" = "Optional fields";
+"registration.email.warning.incorrect" = "Электронная почта некорректна";
+"registration.username.hint.title" = "Имя пользователя должно:";
+"registration.username.hint.point.length" = "состоять от 4 до 40 символов";
+"registration.username.hint.point.content" = "состоять из символов латинского алфавита (a-z), цифр (0-9) и знака подчеркивания";
+"registration.username.description" = "С помощью этого имени вас смогут искать другие пользователи.";
+"registration.username.warning.incorrect" = "Имя пользователя некорректно";
+"registration.password.hint.intro" = "Password must:";
+"registration.password.hint.point.length" = "be at  8 symbols long";
+"registration.password.hint.point.digits" = "contains at least 1 digit";
+"registration.password.hint.point.nonLowerCaseCharacter" = "contains at least 1 capital letter or special symbol. For example @, #, etc.";
+"registration.password.warning.incorrect" = "Пароль некорректен";
+"registration.password.warning.equality" = "Пароли должны совпадать";
+"registration.repeatPassword" = "Repeat password";
+"registration.displayName.description" = "Это имя будет использовано при отображении вашего пользователя. Если оно не указано, будет использовано имя пользователя.";
+"registration.requestFailed" = "Не удалось зарегестрироваться. Пожалуйста попробуйте позже.";
+
+"userGroups.groups" = "Groups";
+"userGroups.tab.name" = "Groups";
+"userGroups.empty.message" = "No groups";
+
+"userGroupCreation.title" = "New user group";
+"userGroupCreation.userGroupName.warning.empty" = "Name cannot be empty";
+
+"userGroupDetails.transfers.tab.name" = "Transfer";
+
+"userGroupInfo.users.empty.message" = "No users";
+"userGroupInfo.addUsers.button.text" = "Add users";
+
+"transferList.tab.name" = "Transfers";
+
+"transfers.title" = "Transfers";
+"transfers.empty.message" = "No transfers";
+
+"transferGroup.addTransfer" = "Add transfer";
+"transferGroup.addTransferGroup" = "Add transfer group";
+
+"transferGroupEditing.sharedInfo.title" = "Common info";
+"transferGroupEditing.sharedInfo.enable.button.text" = "Add common info";
+"transferGroupEditing.sharedInfo.disable.button.text" = "Disable";
+"transferGroupEditing.sharedInfo.remainder.label" = "Remains to be distributed";
+
+"transferInfoEditingView.transferName" = "Transfer name";
+"transferInfoEditingView.transferNotes" = "Transfer notes";
+
+"newTransfer.info" = "Info";
+"newTransfer.participant" = "Participant";
+"newTransfer.participants" = "Participants";
+
+"amountSplit.align" = "Align";
+
+"profile.tab.name" = "Profile";
+"profile.title" = "Profile";
+
+"contacts.title" = "Contacts";
+"contacts.link.name" = "Contacts";
+"contacts.empty.message" = "No contacts";
+
+"addContacts.title" = "New contact";
+
+"userEjectSelection.selectedSection.header" = "Selected";
+"userEjectSelection.allSection.header" = "Users";
+
+"userSelectionPicker.notSelected" = "Not selected";
+
+"summary.subtitle" = "Summary";

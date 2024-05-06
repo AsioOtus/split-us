@@ -1,0 +1,28 @@
+{% if catalogs %}import SwiftUI
+
+{% macro enumBlock assets %}
+  {% call casesBlock assets %}
+{% endmacro %}
+{% macro casesBlock assets %}
+  {% for asset in assets %}
+  {% if asset.type == "color" %}
+	static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = Color("{{asset.value}}", bundle: .module)
+  {% elif asset.items %}
+  {% call casesBlock asset.items %}
+  {% endif %}
+  {% endfor %}
+{% endmacro %}
+public extension Color {
+  {% if catalogs.count > 1 or param.forceFileNameEnum %}
+  {% for catalog in catalogs %}
+	public enum {{catalog.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+    {% filter indent:2 %}{% call enumBlock catalog.assets %}{% endfilter %}
+  }
+  {% endfor %}
+  {% else %}
+  {% call enumBlock catalogs.first.assets %}
+  {% endif %}
+}
+{% else %}
+// No colors found
+{% endif %}

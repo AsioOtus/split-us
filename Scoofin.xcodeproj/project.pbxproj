@@ -1,0 +1,1016 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A1815332B8D258D0066606F /* dl-models in Resources */ = {isa = PBXBuildFile; fileRef = 3A1815322B8D258C0066606F /* dl-models */; };
+		3A3099C22BC8971B00CF7D34 /* ILModels in Frameworks */ = {isa = PBXBuildFile; productRef = 3A3099C12BC8971B00CF7D34 /* ILModels */; };
+		3A3099C62BC897D600CF7D34 /* ILComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 3A3099C52BC897D600CF7D34 /* ILComponents */; };
+		3A3099C82BC899FF00CF7D34 /* ILLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 3A3099C72BC899FF00CF7D34 /* ILLogic */; };
+		3A3099CA2BC89A6A00CF7D34 /* ILFormatters in Frameworks */ = {isa = PBXBuildFile; productRef = 3A3099C92BC89A6A00CF7D34 /* ILFormatters */; };
+		3A38AA1B2BE4467000C3C367 /* il-utils in Resources */ = {isa = PBXBuildFile; fileRef = 3A38AA1A2BE4466F00C3C367 /* il-utils */; };
+		3A80A9D32BE457BF0057C032 /* il-preview in Resources */ = {isa = PBXBuildFile; fileRef = 3A80A9D22BE457BF0057C032 /* il-preview */; };
+		3A88AF2D2B8D37C000C3B722 /* DLModels in Frameworks */ = {isa = PBXBuildFile; productRef = 3A88AF2C2B8D37C000C3B722 /* DLModels */; };
+		3A88AF2F2B8D37C000C3B722 /* DLNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 3A88AF2E2B8D37C000C3B722 /* DLNetwork */; };
+		3A88AF312B8D37C000C3B722 /* DLServices in Frameworks */ = {isa = PBXBuildFile; productRef = 3A88AF302B8D37C000C3B722 /* DLServices */; };
+		3A8D34EF2B3251E2001B6744 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8D34EE2B3251E2001B6744 /* ComposableArchitecture */; };
+		3A8D34F22B3255B6001B6744 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8D34F12B3255B6001B6744 /* DesignSystem */; };
+		3A95B3532BC799CD00F99EE8 /* il-debug in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B34A2BC799CC00F99EE8 /* il-debug */; };
+		3A95B3542BC799CD00F99EE8 /* il-models in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B34B2BC799CC00F99EE8 /* il-models */; };
+		3A95B3552BC799CD00F99EE8 /* il-formatters in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B34C2BC799CC00F99EE8 /* il-formatters */; };
+		3A95B3572BC799CD00F99EE8 /* il-design-system in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B34E2BC799CC00F99EE8 /* il-design-system */; };
+		3A95B3582BC799CD00F99EE8 /* il-logic in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B34F2BC799CD00F99EE8 /* il-logic */; };
+		3A95B3592BC799CD00F99EE8 /* il-localization in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B3502BC799CD00F99EE8 /* il-localization */; };
+		3A95B35B2BC799CD00F99EE8 /* il-components in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B3522BC799CD00F99EE8 /* il-components */; };
+		3A9A68F72B4757BF006561A6 /* ScreenUserDetails in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9A68F62B4757BF006561A6 /* ScreenUserDetails */; };
+		3A9EDACA2BC79917007DE302 /* screen-user-group-creation in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDA9B2BC79916007DE302 /* screen-user-group-creation */; };
+		3A9EDACB2BC79917007DE302 /* screen-profile in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDA9C2BC79916007DE302 /* screen-profile */; };
+		3A9EDACC2BC79917007DE302 /* screen-contact-list in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDA9D2BC79916007DE302 /* screen-contact-list */; };
+		3A9EDACD2BC79917007DE302 /* screen-login in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDA9E2BC79916007DE302 /* screen-login */; };
+		3A9EDACE2BC79917007DE302 /* screen-user-group-user-adding in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDA9F2BC79916007DE302 /* screen-user-group-user-adding */; };
+		3A9EDACF2BC79917007DE302 /* screen-add-contacts in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA02BC79916007DE302 /* screen-add-contacts */; };
+		3A9EDAD02BC79917007DE302 /* screen-summary in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA12BC79916007DE302 /* screen-summary */; };
+		3A9EDAD12BC79917007DE302 /* screen-user-group-details in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA22BC79916007DE302 /* screen-user-group-details */; };
+		3A9EDAD22BC79917007DE302 /* screen-transfer-group-editing in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA32BC79916007DE302 /* screen-transfer-group-editing */; };
+		3A9EDAD32BC79917007DE302 /* screen-user-details in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA42BC79916007DE302 /* screen-user-details */; };
+		3A9EDAD42BC79917007DE302 /* screen-transfer-list in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA52BC79916007DE302 /* screen-transfer-list */; };
+		3A9EDAD52BC79917007DE302 /* screen-user-group-editing in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA62BC79916007DE302 /* screen-user-group-editing */; };
+		3A9EDAD62BC79917007DE302 /* screen-transfer-editing in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA72BC79916007DE302 /* screen-transfer-editing */; };
+		3A9EDAD72BC79917007DE302 /* screen-user-group-info in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA82BC79916007DE302 /* screen-user-group-info */; };
+		3A9EDAD82BC79917007DE302 /* screen-registration in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA92BC79916007DE302 /* screen-registration */; };
+		3A9EDAD92BC79917007DE302 /* screen-user-group-list in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAAA2BC79916007DE302 /* screen-user-group-list */; };
+		3AA7E0882B45960400846BE4 /* MultitoolKitFormatters in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7E0872B45960400846BE4 /* MultitoolKitFormatters */; };
+		3AC876092BE448EB00BCD347 /* DLUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 3AC876082BE448EB00BCD347 /* DLUtils */; };
+		3AC8760B2BE448F000BCD347 /* ILUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 3AC8760A2BE448F000BCD347 /* ILUtils */; };
+		3ACBAB4D2BE0F9DC0011C728 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3ACBAB4A2BE0F9DC0011C728 /* Localizable.strings */; };
+		3AD18FA22BC89B79007CC0C5 /* ILLocalization in Frameworks */ = {isa = PBXBuildFile; productRef = 3AD18FA12BC89B79007CC0C5 /* ILLocalization */; };
+		3AD322E62B32505B00110574 /* dl-network in Resources */ = {isa = PBXBuildFile; fileRef = 3AD322E32B32505B00110574 /* dl-network */; };
+		3AD322E72B32505B00110574 /* dl-services in Resources */ = {isa = PBXBuildFile; fileRef = 3AD322E42B32505B00110574 /* dl-services */; };
+		3AE4473F2B33334700D45A1B /* Debug in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE4473E2B33334700D45A1B /* Debug */; };
+		3AF696162B33ADA60060862E /* ScreenAddContacts in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696152B33ADA60060862E /* ScreenAddContacts */; };
+		3AF696182B33ADA60060862E /* ScreenContactList in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696172B33ADA60060862E /* ScreenContactList */; };
+		3AF6961A2B33ADA60060862E /* ScreenLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696192B33ADA60060862E /* ScreenLogin */; };
+		3AF6961C2B33ADA60060862E /* ScreenProfile in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF6961B2B33ADA60060862E /* ScreenProfile */; };
+		3AF6961E2B33ADA60060862E /* ScreenRegistration in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF6961D2B33ADA60060862E /* ScreenRegistration */; };
+		3AF696202B33ADA60060862E /* ScreenSummary in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF6961F2B33ADA60060862E /* ScreenSummary */; };
+		3AF696222B33ADA60060862E /* ScreenTransferEditing in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696212B33ADA60060862E /* ScreenTransferEditing */; };
+		3AF696242B33ADA60060862E /* ScreenTransferGroupEditing in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696232B33ADA60060862E /* ScreenTransferGroupEditing */; };
+		3AF696262B33ADA60060862E /* ScreenTransferList in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696252B33ADA60060862E /* ScreenTransferList */; };
+		3AF696282B33ADA60060862E /* ScreenUserGroupCreation in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696272B33ADA60060862E /* ScreenUserGroupCreation */; };
+		3AF6962A2B33ADA60060862E /* ScreenUserGroupDetails in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696292B33ADA60060862E /* ScreenUserGroupDetails */; };
+		3AF6962C2B33ADA60060862E /* ScreenUserGroupEditing in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF6962B2B33ADA60060862E /* ScreenUserGroupEditing */; };
+		3AF6962E2B33ADA60060862E /* ScreenUserGroupInfo in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF6962D2B33ADA60060862E /* ScreenUserGroupInfo */; };
+		3AF696302B33ADA60060862E /* ScreenUserGroupList in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF6962F2B33ADA60060862E /* ScreenUserGroupList */; };
+		3AF696322B33ADA60060862E /* ScreenUserGroupUserAdding in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696312B33ADA60060862E /* ScreenUserGroupUserAdding */; };
+		9E26A1AE29325E9800391181 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E26A1AD29325E9800391181 /* main.swift */; };
+		9E36C0AF28E1A83700B8B5DC /* ScoofinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36C0AE28E1A83700B8B5DC /* ScoofinApp.swift */; };
+		9E36C0B328E1A83800B8B5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E36C0B228E1A83800B8B5DC /* Assets.xcassets */; };
+		9E36C0B628E1A83800B8B5DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E36C0B528E1A83800B8B5DC /* Preview Assets.xcassets */; };
+		9E36C0DF28E262B100B8B5DC /* Main.Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36C0DE28E262B100B8B5DC /* Main.Screen.swift */; };
+		9E36C11228E37A3800B8B5DC /* Root.Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36C11128E37A3800B8B5DC /* Root.Screen.swift */; };
+		9EDE872229FAD05D00E88BB2 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDE872129FAD05D00E88BB2 /* Root.swift */; };
+		9EDE872429FAD08600E88BB2 /* Root.Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDE872329FAD08600E88BB2 /* Root.Reducer.swift */; };
+		9EDE872E29FAD1CF00E88BB2 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDE872D29FAD1CF00E88BB2 /* Main.swift */; };
+		9EDE873029FAD20A00E88BB2 /* Main.Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDE872F29FAD20A00E88BB2 /* Main.Reducer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9E26A1A929325E9800391181 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3A004F432BC76436008BEDEE /* dl-logic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-logic"; sourceTree = "<group>"; };
+		3A1815322B8D258C0066606F /* dl-models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-models"; sourceTree = "<group>"; };
+		3A38AA1A2BE4466F00C3C367 /* il-utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-utils"; sourceTree = "<group>"; };
+		3A80A9D22BE457BF0057C032 /* il-preview */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-preview"; sourceTree = "<group>"; };
+		3A95B34A2BC799CC00F99EE8 /* il-debug */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-debug"; sourceTree = "<group>"; };
+		3A95B34B2BC799CC00F99EE8 /* il-models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-models"; sourceTree = "<group>"; };
+		3A95B34C2BC799CC00F99EE8 /* il-formatters */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-formatters"; sourceTree = "<group>"; };
+		3A95B34E2BC799CC00F99EE8 /* il-design-system */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-design-system"; sourceTree = "<group>"; };
+		3A95B34F2BC799CD00F99EE8 /* il-logic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-logic"; sourceTree = "<group>"; };
+		3A95B3502BC799CD00F99EE8 /* il-localization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-localization"; sourceTree = "<group>"; };
+		3A95B3522BC799CD00F99EE8 /* il-components */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-components"; sourceTree = "<group>"; };
+		3A9EDA9B2BC79916007DE302 /* screen-user-group-creation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-creation"; sourceTree = "<group>"; };
+		3A9EDA9C2BC79916007DE302 /* screen-profile */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-profile"; sourceTree = "<group>"; };
+		3A9EDA9D2BC79916007DE302 /* screen-contact-list */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-contact-list"; sourceTree = "<group>"; };
+		3A9EDA9E2BC79916007DE302 /* screen-login */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-login"; sourceTree = "<group>"; };
+		3A9EDA9F2BC79916007DE302 /* screen-user-group-user-adding */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-user-adding"; sourceTree = "<group>"; };
+		3A9EDAA02BC79916007DE302 /* screen-add-contacts */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-add-contacts"; sourceTree = "<group>"; };
+		3A9EDAA12BC79916007DE302 /* screen-summary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-summary"; sourceTree = "<group>"; };
+		3A9EDAA22BC79916007DE302 /* screen-user-group-details */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-details"; sourceTree = "<group>"; };
+		3A9EDAA32BC79916007DE302 /* screen-transfer-group-editing */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-transfer-group-editing"; sourceTree = "<group>"; };
+		3A9EDAA42BC79916007DE302 /* screen-user-details */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-details"; sourceTree = "<group>"; };
+		3A9EDAA52BC79916007DE302 /* screen-transfer-list */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-transfer-list"; sourceTree = "<group>"; };
+		3A9EDAA62BC79916007DE302 /* screen-user-group-editing */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-editing"; sourceTree = "<group>"; };
+		3A9EDAA72BC79916007DE302 /* screen-transfer-editing */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-transfer-editing"; sourceTree = "<group>"; };
+		3A9EDAA82BC79916007DE302 /* screen-user-group-info */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-info"; sourceTree = "<group>"; };
+		3A9EDAA92BC79916007DE302 /* screen-registration */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-registration"; sourceTree = "<group>"; };
+		3A9EDAAA2BC79916007DE302 /* screen-user-group-list */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-list"; sourceTree = "<group>"; };
+		3ACBAB4B2BE0F9DC0011C728 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3ACBAB4C2BE0F9DC0011C728 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3AD322E32B32505B00110574 /* dl-network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-network"; sourceTree = "<group>"; };
+		3AD322E42B32505B00110574 /* dl-services */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-services"; sourceTree = "<group>"; };
+		3ADBF36B2BE4450C0026785E /* dl-utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-utils"; sourceTree = "<group>"; };
+		9E26A1AB29325E9800391181 /* ScoofinTestground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ScoofinTestground; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E26A1AD29325E9800391181 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9E36C0AB28E1A83700B8B5DC /* scoofin-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "scoofin-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E36C0AE28E1A83700B8B5DC /* ScoofinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoofinApp.swift; sourceTree = "<group>"; };
+		9E36C0B228E1A83800B8B5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E36C0B528E1A83800B8B5DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9E36C0DE28E262B100B8B5DC /* Main.Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Screen.swift; sourceTree = "<group>"; };
+		9E36C11128E37A3800B8B5DC /* Root.Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.Screen.swift; sourceTree = "<group>"; };
+		9E870B8C2932D95000763582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EDE872129FAD05D00E88BB2 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		9EDE872329FAD08600E88BB2 /* Root.Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.Reducer.swift; sourceTree = "<group>"; };
+		9EDE872D29FAD1CF00E88BB2 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		9EDE872F29FAD20A00E88BB2 /* Main.Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Reducer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9E26A1A829325E9800391181 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E36C0A828E1A83700B8B5DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF696242B33ADA60060862E /* ScreenTransferGroupEditing in Frameworks */,
+				3A3099C22BC8971B00CF7D34 /* ILModels in Frameworks */,
+				3AF6961A2B33ADA60060862E /* ScreenLogin in Frameworks */,
+				3AA7E0882B45960400846BE4 /* MultitoolKitFormatters in Frameworks */,
+				3AF696282B33ADA60060862E /* ScreenUserGroupCreation in Frameworks */,
+				3AF6961E2B33ADA60060862E /* ScreenRegistration in Frameworks */,
+				3A8D34F22B3255B6001B6744 /* DesignSystem in Frameworks */,
+				3AF696182B33ADA60060862E /* ScreenContactList in Frameworks */,
+				3AD18FA22BC89B79007CC0C5 /* ILLocalization in Frameworks */,
+				3AC8760B2BE448F000BCD347 /* ILUtils in Frameworks */,
+				3AF696222B33ADA60060862E /* ScreenTransferEditing in Frameworks */,
+				3AF696162B33ADA60060862E /* ScreenAddContacts in Frameworks */,
+				3AC876092BE448EB00BCD347 /* DLUtils in Frameworks */,
+				3A88AF2F2B8D37C000C3B722 /* DLNetwork in Frameworks */,
+				3AE4473F2B33334700D45A1B /* Debug in Frameworks */,
+				3AF696202B33ADA60060862E /* ScreenSummary in Frameworks */,
+				3A8D34EF2B3251E2001B6744 /* ComposableArchitecture in Frameworks */,
+				3AF6962C2B33ADA60060862E /* ScreenUserGroupEditing in Frameworks */,
+				3A3099C62BC897D600CF7D34 /* ILComponents in Frameworks */,
+				3AF696322B33ADA60060862E /* ScreenUserGroupUserAdding in Frameworks */,
+				3AF6962E2B33ADA60060862E /* ScreenUserGroupInfo in Frameworks */,
+				3AF6962A2B33ADA60060862E /* ScreenUserGroupDetails in Frameworks */,
+				3AF696262B33ADA60060862E /* ScreenTransferList in Frameworks */,
+				3A3099C82BC899FF00CF7D34 /* ILLogic in Frameworks */,
+				3A9A68F72B4757BF006561A6 /* ScreenUserDetails in Frameworks */,
+				3AF696302B33ADA60060862E /* ScreenUserGroupList in Frameworks */,
+				3A3099CA2BC89A6A00CF7D34 /* ILFormatters in Frameworks */,
+				3AF6961C2B33ADA60060862E /* ScreenProfile in Frameworks */,
+				3A88AF2D2B8D37C000C3B722 /* DLModels in Frameworks */,
+				3A88AF312B8D37C000C3B722 /* DLServices in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A18152F2B8D24660066606F /* DLPackages */ = {
+			isa = PBXGroup;
+			children = (
+				3A004F432BC76436008BEDEE /* dl-logic */,
+				3A1815322B8D258C0066606F /* dl-models */,
+				3AD322E32B32505B00110574 /* dl-network */,
+				3AD322E42B32505B00110574 /* dl-services */,
+				3ADBF36B2BE4450C0026785E /* dl-utils */,
+			);
+			path = DLPackages;
+			sourceTree = "<group>";
+		};
+		3A9EDA942BC79916007DE302 /* ILPackages */ = {
+			isa = PBXGroup;
+			children = (
+				3A9EDA9A2BC79916007DE302 /* Screens */,
+				3A95B3522BC799CD00F99EE8 /* il-components */,
+				3A95B34A2BC799CC00F99EE8 /* il-debug */,
+				3A95B34E2BC799CC00F99EE8 /* il-design-system */,
+				3A95B34C2BC799CC00F99EE8 /* il-formatters */,
+				3A95B3502BC799CD00F99EE8 /* il-localization */,
+				3A95B34F2BC799CD00F99EE8 /* il-logic */,
+				3A95B34B2BC799CC00F99EE8 /* il-models */,
+				3A80A9D22BE457BF0057C032 /* il-preview */,
+				3A38AA1A2BE4466F00C3C367 /* il-utils */,
+			);
+			path = ILPackages;
+			sourceTree = "<group>";
+		};
+		3A9EDA9A2BC79916007DE302 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3A9EDAA02BC79916007DE302 /* screen-add-contacts */,
+				3A9EDA9D2BC79916007DE302 /* screen-contact-list */,
+				3A9EDA9E2BC79916007DE302 /* screen-login */,
+				3A9EDA9C2BC79916007DE302 /* screen-profile */,
+				3A9EDAA92BC79916007DE302 /* screen-registration */,
+				3A9EDAA12BC79916007DE302 /* screen-summary */,
+				3A9EDAA72BC79916007DE302 /* screen-transfer-editing */,
+				3A9EDAA32BC79916007DE302 /* screen-transfer-group-editing */,
+				3A9EDAA52BC79916007DE302 /* screen-transfer-list */,
+				3A9EDAA42BC79916007DE302 /* screen-user-details */,
+				3A9EDA9B2BC79916007DE302 /* screen-user-group-creation */,
+				3A9EDAA22BC79916007DE302 /* screen-user-group-details */,
+				3A9EDAA62BC79916007DE302 /* screen-user-group-editing */,
+				3A9EDAA82BC79916007DE302 /* screen-user-group-info */,
+				3A9EDAAA2BC79916007DE302 /* screen-user-group-list */,
+				3A9EDA9F2BC79916007DE302 /* screen-user-group-user-adding */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3ACBAB492BE0F9DC0011C728 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				3ACBAB4A2BE0F9DC0011C728 /* Localizable.strings */,
+			);
+			name = Localizable;
+			path = "Packages/ILPackages/il-localization/Sources/ILLocalization/Localizable";
+			sourceTree = SOURCE_ROOT;
+		};
+		3ADD24662B320E7800487237 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				3A18152F2B8D24660066606F /* DLPackages */,
+				3A9EDA942BC79916007DE302 /* ILPackages */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		9E26A1AC29325E9800391181 /* ScoofinTestground */ = {
+			isa = PBXGroup;
+			children = (
+				9E26A1AD29325E9800391181 /* main.swift */,
+			);
+			path = ScoofinTestground;
+			sourceTree = "<group>";
+		};
+		9E36C0A228E1A83700B8B5DC = {
+			isa = PBXGroup;
+			children = (
+				9E36C0AD28E1A83700B8B5DC /* Scoofin */,
+				9E26A1AC29325E9800391181 /* ScoofinTestground */,
+				3ADD24662B320E7800487237 /* Packages */,
+				9E36C0AC28E1A83700B8B5DC /* Products */,
+				9E36C0C828E2521600B8B5DC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9E36C0AC28E1A83700B8B5DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E36C0AB28E1A83700B8B5DC /* scoofin-app.app */,
+				9E26A1AB29325E9800391181 /* ScoofinTestground */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E36C0AD28E1A83700B8B5DC /* Scoofin */ = {
+			isa = PBXGroup;
+			children = (
+				9E36C0C428E2510600B8B5DC /* Resources */,
+				9E36C0C328E2510100B8B5DC /* Sources */,
+			);
+			path = Scoofin;
+			sourceTree = "<group>";
+		};
+		9E36C0B428E1A83800B8B5DC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9E36C0B528E1A83800B8B5DC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9E36C0C328E2510100B8B5DC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9E36C0D128E255B700B8B5DC /* App */,
+				9E4006A5297ED35300C1B6C9 /* Screens */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9E36C0C428E2510600B8B5DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3ACBAB492BE0F9DC0011C728 /* Localizable */,
+				9E36C0B228E1A83800B8B5DC /* Assets.xcassets */,
+				9E870B8C2932D95000763582 /* Info.plist */,
+				9E36C0B428E1A83800B8B5DC /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9E36C0C828E2521600B8B5DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E36C0D128E255B700B8B5DC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9E36C0AE28E1A83700B8B5DC /* ScoofinApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9E36C11828E444DB00B8B5DC /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9EDE872329FAD08600E88BB2 /* Root.Reducer.swift */,
+				9E36C11128E37A3800B8B5DC /* Root.Screen.swift */,
+				9EDE872129FAD05D00E88BB2 /* Root.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		9E4006A5297ED35300C1B6C9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9E8B6C4B290E90C3001D2CBA /* Main */,
+				9E36C11828E444DB00B8B5DC /* Root */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		9E8B6C4B290E90C3001D2CBA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9EDE872F29FAD20A00E88BB2 /* Main.Reducer.swift */,
+				9E36C0DE28E262B100B8B5DC /* Main.Screen.swift */,
+				9EDE872D29FAD1CF00E88BB2 /* Main.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9E26A1AA29325E9800391181 /* ScoofinTestground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E26A1AF29325E9800391181 /* Build configuration list for PBXNativeTarget "ScoofinTestground" */;
+			buildPhases = (
+				9E26A1A729325E9800391181 /* Sources */,
+				9E26A1A829325E9800391181 /* Frameworks */,
+				9E26A1A929325E9800391181 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScoofinTestground;
+			productName = SplitterTestground;
+			productReference = 9E26A1AB29325E9800391181 /* ScoofinTestground */;
+			productType = "com.apple.product-type.tool";
+		};
+		9E36C0AA28E1A83700B8B5DC /* Scoofin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E36C0B928E1A83800B8B5DC /* Build configuration list for PBXNativeTarget "Scoofin" */;
+			buildPhases = (
+				3A8E9FA92B19247D00D704E9 /* SwiftGen */,
+				9E36C0A728E1A83700B8B5DC /* Sources */,
+				9E36C0A828E1A83700B8B5DC /* Frameworks */,
+				9E36C0A928E1A83700B8B5DC /* Resources */,
+				3AA4F89B2B345E7D000F4426 /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Scoofin;
+			packageProductDependencies = (
+				3A8D34EE2B3251E2001B6744 /* ComposableArchitecture */,
+				3A8D34F12B3255B6001B6744 /* DesignSystem */,
+				3AE4473E2B33334700D45A1B /* Debug */,
+				3AF696152B33ADA60060862E /* ScreenAddContacts */,
+				3AF696172B33ADA60060862E /* ScreenContactList */,
+				3AF696192B33ADA60060862E /* ScreenLogin */,
+				3AF6961B2B33ADA60060862E /* ScreenProfile */,
+				3AF6961D2B33ADA60060862E /* ScreenRegistration */,
+				3AF6961F2B33ADA60060862E /* ScreenSummary */,
+				3AF696212B33ADA60060862E /* ScreenTransferEditing */,
+				3AF696232B33ADA60060862E /* ScreenTransferGroupEditing */,
+				3AF696252B33ADA60060862E /* ScreenTransferList */,
+				3AF696272B33ADA60060862E /* ScreenUserGroupCreation */,
+				3AF696292B33ADA60060862E /* ScreenUserGroupDetails */,
+				3AF6962B2B33ADA60060862E /* ScreenUserGroupEditing */,
+				3AF6962D2B33ADA60060862E /* ScreenUserGroupInfo */,
+				3AF6962F2B33ADA60060862E /* ScreenUserGroupList */,
+				3AF696312B33ADA60060862E /* ScreenUserGroupUserAdding */,
+				3AA7E0872B45960400846BE4 /* MultitoolKitFormatters */,
+				3A9A68F62B4757BF006561A6 /* ScreenUserDetails */,
+				3A88AF2C2B8D37C000C3B722 /* DLModels */,
+				3A88AF2E2B8D37C000C3B722 /* DLNetwork */,
+				3A88AF302B8D37C000C3B722 /* DLServices */,
+				3A3099C12BC8971B00CF7D34 /* ILModels */,
+				3A3099C52BC897D600CF7D34 /* ILComponents */,
+				3A3099C72BC899FF00CF7D34 /* ILLogic */,
+				3A3099C92BC89A6A00CF7D34 /* ILFormatters */,
+				3AD18FA12BC89B79007CC0C5 /* ILLocalization */,
+				3AC876082BE448EB00BCD347 /* DLUtils */,
+				3AC8760A2BE448F000BCD347 /* ILUtils */,
+			);
+			productName = Splitter;
+			productReference = 9E36C0AB28E1A83700B8B5DC /* scoofin-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E36C0A328E1A83700B8B5DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					9E26A1AA29325E9800391181 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					9E36C0AA28E1A83700B8B5DC = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 9E36C0A628E1A83700B8B5DC /* Build configuration list for PBXProject "Scoofin" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ru,
+			);
+			mainGroup = 9E36C0A228E1A83700B8B5DC;
+			packageReferences = (
+				9ED572FF2A9FB08C007B5D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				3AA7E0862B45960400846BE4 /* XCRemoteSwiftPackageReference "multitool-kit" */,
+			);
+			productRefGroup = 9E36C0AC28E1A83700B8B5DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9E36C0AA28E1A83700B8B5DC /* Scoofin */,
+				9E26A1AA29325E9800391181 /* ScoofinTestground */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9E36C0A928E1A83700B8B5DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9EDACF2BC79917007DE302 /* screen-add-contacts in Resources */,
+				3A9EDAD02BC79917007DE302 /* screen-summary in Resources */,
+				3A9EDAD22BC79917007DE302 /* screen-transfer-group-editing in Resources */,
+				3A9EDAD62BC79917007DE302 /* screen-transfer-editing in Resources */,
+				3A95B3582BC799CD00F99EE8 /* il-logic in Resources */,
+				3A1815332B8D258D0066606F /* dl-models in Resources */,
+				3A95B3552BC799CD00F99EE8 /* il-formatters in Resources */,
+				3A95B3532BC799CD00F99EE8 /* il-debug in Resources */,
+				3A9EDAD52BC79917007DE302 /* screen-user-group-editing in Resources */,
+				3ACBAB4D2BE0F9DC0011C728 /* Localizable.strings in Resources */,
+				3A9EDAD42BC79917007DE302 /* screen-transfer-list in Resources */,
+				3A95B3592BC799CD00F99EE8 /* il-localization in Resources */,
+				3A9EDAD32BC79917007DE302 /* screen-user-details in Resources */,
+				3A80A9D32BE457BF0057C032 /* il-preview in Resources */,
+				3AD322E72B32505B00110574 /* dl-services in Resources */,
+				3A9EDACE2BC79917007DE302 /* screen-user-group-user-adding in Resources */,
+				3A95B3542BC799CD00F99EE8 /* il-models in Resources */,
+				3A9EDACC2BC79917007DE302 /* screen-contact-list in Resources */,
+				3A9EDAD82BC79917007DE302 /* screen-registration in Resources */,
+				3A9EDAD12BC79917007DE302 /* screen-user-group-details in Resources */,
+				3A9EDACB2BC79917007DE302 /* screen-profile in Resources */,
+				3A9EDACA2BC79917007DE302 /* screen-user-group-creation in Resources */,
+				3A95B35B2BC799CD00F99EE8 /* il-components in Resources */,
+				3A9EDAD72BC79917007DE302 /* screen-user-group-info in Resources */,
+				9E36C0B628E1A83800B8B5DC /* Preview Assets.xcassets in Resources */,
+				3AD322E62B32505B00110574 /* dl-network in Resources */,
+				3A38AA1B2BE4467000C3C367 /* il-utils in Resources */,
+				3A9EDACD2BC79917007DE302 /* screen-login in Resources */,
+				3A9EDAD92BC79917007DE302 /* screen-user-group-list in Resources */,
+				3A95B3572BC799CD00F99EE8 /* il-design-system in Resources */,
+				9E36C0B328E1A83800B8B5DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A8E9FA92B19247D00D704E9 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftgen >/dev/null; then\n  cd tools/generation\n\tswiftgen\nelse\n  echo \"SwiftGen is not installed\"\nfi\n";
+		};
+		3AA4F89B2B345E7D000F4426 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  cd tools/lint\n\tswiftlint\nelse\n  echo \"SwiftLint is not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E26A1A729325E9800391181 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E26A1AE29325E9800391181 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E36C0A728E1A83700B8B5DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E36C11228E37A3800B8B5DC /* Root.Screen.swift in Sources */,
+				9EDE872429FAD08600E88BB2 /* Root.Reducer.swift in Sources */,
+				9EDE872229FAD05D00E88BB2 /* Root.swift in Sources */,
+				9EDE872E29FAD1CF00E88BB2 /* Main.swift in Sources */,
+				9E36C0AF28E1A83700B8B5DC /* ScoofinApp.swift in Sources */,
+				9EDE873029FAD20A00E88BB2 /* Main.Reducer.swift in Sources */,
+				9E36C0DF28E262B100B8B5DC /* Main.Screen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3ACBAB4A2BE0F9DC0011C728 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3ACBAB4B2BE0F9DC0011C728 /* en */,
+				3ACBAB4C2BE0F9DC0011C728 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9E26A1B029325E9800391181 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 2QTCS5679K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9E26A1B129325E9800391181 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 2QTCS5679K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9E36C0B728E1A83800B8B5DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-no_warn_duplicate_libraries",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9E36C0B828E1A83800B8B5DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-no_warn_duplicate_libraries",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E36C0BA28E1A83800B8B5DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 22;
+				DEVELOPMENT_ASSET_PATHS = "\"Scoofin/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 3HY2N64MXA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Scoofin/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Scoofin;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-expression-type-checking=100";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scoofin.scoofin-app";
+				PRODUCT_NAME = "scoofin-app";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.scoofin.scoofin-app";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_ENABLE_BARE_SLASH_REGEX = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9E36C0BB28E1A83800B8B5DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 22;
+				DEVELOPMENT_ASSET_PATHS = "\"Scoofin/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 3HY2N64MXA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Scoofin/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Scoofin;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-expression-type-checking=100";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scoofin.scoofin-app";
+				PRODUCT_NAME = "scoofin-app";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.scoofin.scoofin-app";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_ENABLE_BARE_SLASH_REGEX = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9E26A1AF29325E9800391181 /* Build configuration list for PBXNativeTarget "ScoofinTestground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E26A1B029325E9800391181 /* Debug */,
+				9E26A1B129325E9800391181 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E36C0A628E1A83700B8B5DC /* Build configuration list for PBXProject "Scoofin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E36C0B728E1A83800B8B5DC /* Debug */,
+				9E36C0B828E1A83800B8B5DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E36C0B928E1A83800B8B5DC /* Build configuration list for PBXNativeTarget "Scoofin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E36C0BA28E1A83800B8B5DC /* Debug */,
+				9E36C0BB28E1A83800B8B5DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3AA7E0862B45960400846BE4 /* XCRemoteSwiftPackageReference "multitool-kit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AsioOtus/multitool-kit";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.1;
+			};
+		};
+		9ED572FF2A9FB08C007B5D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = exactVersion;
+				version = 1.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A3099C12BC8971B00CF7D34 /* ILModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ILModels;
+		};
+		3A3099C52BC897D600CF7D34 /* ILComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ILComponents;
+		};
+		3A3099C72BC899FF00CF7D34 /* ILLogic */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ILLogic;
+		};
+		3A3099C92BC89A6A00CF7D34 /* ILFormatters */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ILFormatters;
+		};
+		3A88AF2C2B8D37C000C3B722 /* DLModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DLModels;
+		};
+		3A88AF2E2B8D37C000C3B722 /* DLNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DLNetwork;
+		};
+		3A88AF302B8D37C000C3B722 /* DLServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DLServices;
+		};
+		3A8D34EE2B3251E2001B6744 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9ED572FF2A9FB08C007B5D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		3A8D34F12B3255B6001B6744 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+		3A9A68F62B4757BF006561A6 /* ScreenUserDetails */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenUserDetails;
+		};
+		3AA7E0872B45960400846BE4 /* MultitoolKitFormatters */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AA7E0862B45960400846BE4 /* XCRemoteSwiftPackageReference "multitool-kit" */;
+			productName = MultitoolKitFormatters;
+		};
+		3AC876082BE448EB00BCD347 /* DLUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DLUtils;
+		};
+		3AC8760A2BE448F000BCD347 /* ILUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ILUtils;
+		};
+		3AD18FA12BC89B79007CC0C5 /* ILLocalization */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ILLocalization;
+		};
+		3AE4473E2B33334700D45A1B /* Debug */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Debug;
+		};
+		3AF696152B33ADA60060862E /* ScreenAddContacts */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenAddContacts;
+		};
+		3AF696172B33ADA60060862E /* ScreenContactList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenContactList;
+		};
+		3AF696192B33ADA60060862E /* ScreenLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenLogin;
+		};
+		3AF6961B2B33ADA60060862E /* ScreenProfile */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenProfile;
+		};
+		3AF6961D2B33ADA60060862E /* ScreenRegistration */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenRegistration;
+		};
+		3AF6961F2B33ADA60060862E /* ScreenSummary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenSummary;
+		};
+		3AF696212B33ADA60060862E /* ScreenTransferEditing */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenTransferEditing;
+		};
+		3AF696232B33ADA60060862E /* ScreenTransferGroupEditing */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenTransferGroupEditing;
+		};
+		3AF696252B33ADA60060862E /* ScreenTransferList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenTransferList;
+		};
+		3AF696272B33ADA60060862E /* ScreenUserGroupCreation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenUserGroupCreation;
+		};
+		3AF696292B33ADA60060862E /* ScreenUserGroupDetails */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenUserGroupDetails;
+		};
+		3AF6962B2B33ADA60060862E /* ScreenUserGroupEditing */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenUserGroupEditing;
+		};
+		3AF6962D2B33ADA60060862E /* ScreenUserGroupInfo */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenUserGroupInfo;
+		};
+		3AF6962F2B33ADA60060862E /* ScreenUserGroupList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenUserGroupList;
+		};
+		3AF696312B33ADA60060862E /* ScreenUserGroupUserAdding */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenUserGroupUserAdding;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9E36C0A328E1A83700B8B5DC /* Project object */;
+}

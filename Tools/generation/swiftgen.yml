@@ -1,0 +1,21 @@
+strings:
+  inputs:
+    - ../../Packages/ILPackages/il-localization/Sources/ILLocalization/Localizable/ru.lproj
+  outputs:
+      templatePath: localization.stencil
+      output: ../../Packages/ILPackages/il-localization/Sources/ILLocalization/Localization.g.swift
+
+xcassets:
+  - inputs:
+      - ../../Packages/ILPackages/il-design-system/Sources/DesignResources/Colors.xcassets
+    outputs:
+      templatePath: colors.stencil
+      output: ../../Packages/ILPackages/il-design-system/Sources/DesignResources/Colors.g.swift
+  # - inputs:
+  #     - Assets.xcassets
+  #   outputs:
+  #     templatePath: assets_swift5_swiftui.stencil
+  #     output: Assets.swift
+  #     params:
+  #       enumName: Assets
+  #       publicAccess: true

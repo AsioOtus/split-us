@@ -1,0 +1,108 @@
+"general.action.create" = "Создать";
+"general.action.save" = "Сохранить";
+"general.action.cancel" = "Отменить";
+"general.action.add" = "Добавить";
+"general.action.remove" = "Удалить";
+"general.action.edit" = "Изменить";
+"general.action.delete" = "Удалить";
+"general.action.signUp" = "Зарегистрироваться";
+"general.action.signIn" = "Войти";
+"general.action.signOut" = "Выйти";
+"general.action.search" = "Искать";
+"general.action.close" = "Закрыть";
+"general.action.retry" = "Повторить";
+"general.action.refresh" = "Обновить";
+"general.action.select" = "Выбрать";
+"general.short.somethingWentWrong" = "Ошибка";
+"general.date" = "Дата";
+"general.done" = "Готово";
+"general.search" = "Поиск";
+"general.registration" = "Регистрация";
+"general.logIn" = "Вход";
+"general.username" = "Логин";
+"general.password" = "Пароль";
+"general.email" = "Электронная почта";
+"general.name" = "Имя";
+"general.username" = "Имя пользователя";
+"general.somethingWentWrong" = "Что-то пошло не так";
+"general.nothingFound" = "Ничего не найдено";
+"general.users" = "Пользователи";
+
+"domain.creditor" = "Оплативший";
+"domain.borrower" = "Заемщик";
+"domain.sum" = "Сумма";
+"domain.notes" = "Заметки";
+"domain.contacts" = "Контакты";
+"domain.transfer" = "Перевод";
+"domain.transferGroup" = "Группа переводов";
+
+"login.forgetPassword" = "Забыли пароль?";
+
+"registration.displayName" = "Отображаемое имя";
+"registration.requiredFields" = "Обязательные поля";
+"registration.optionalFields" = "Необязательные поля";
+"registration.email.warning.incorrect" = "Электронная почта некорректна";
+"registration.username.hint.title" = "Имя пользователя должно:";
+"registration.username.hint.point.length" = "состоять от 4 до 40 символов";
+"registration.username.hint.point.content" = "состоять из символов латинского алфавита (a-z), цифр (0-9) или знака подчеркивания";
+"registration.username.description" = "С помощью этого имени вас смогут найти другие пользователи.";
+"registration.username.warning.incorrect" = "Имя пользователя некорректно";
+"registration.password.hint.intro" = "Пароль должен:";
+"registration.password.hint.point.length" = "состоять хотя бы из 8 символов";
+"registration.password.hint.point.digits" = "содержать хотя бы 1 цифру";
+"registration.password.hint.point.nonLowerCaseCharacter" = "содержать хотя бы 1 большую букву или специальный символ. Например, @, # и т.п.";
+"registration.password.warning.incorrect" = "Пароль некорректен";
+"registration.password.warning.equality" = "Пароли должны совпадать";
+"registration.repeatPassword" = "Повторите пароль";
+"registration.displayName.description" = "Это имя будет использовано при отображении вашего пользователя. Если оно не указано, будет использовано имя пользователя.";
+"registration.requestFailed" = "Не удалось зарегестрироваться. Пожалуйста попробуйте позже.";
+
+"userGroups.groups" = "Группы";
+"userGroups.tab.name" = "Группы";
+"userGroups.empty.message" = "Групп нет";
+
+"userGroupCreation.title" = "Новая группа";
+"userGroupCreation.userGroupName.warning.empty" = "Название группы не может быть пустым";
+
+"userGroupDetails.transfers.tab.name" = "Переводы";
+
+"userGroupInfo.users.empty.message" = "Нет пользователей";
+"userGroupInfo.addUsers.button.text" = "Добавить пользователей";
+
+"transferList.tab.name" = "Переводы";
+
+"transfers.title" = "Переводы";
+"transfers.empty.message" = "Переводов нет";
+
+"transferGroup.addTransfer" = "Добавить перевод";
+"transferGroup.addTransferGroup" = "Добавить группу переводов";
+
+"transferGroupEditing.sharedInfo.title" = "Общая информация";
+"transferGroupEditing.sharedInfo.enable.button.text" = "Добавить общую информацию";
+"transferGroupEditing.sharedInfo.disable.button.text" = "Убрать";
+"transferGroupEditing.sharedInfo.remainder.label" = "Осталось разделить";
+
+"transferInfoEditingView.transferName" = "Название перевода";
+"transferInfoEditingView.transferNotes" = "Заметки к переводу";
+
+"newTransfer.info" = "Информация";
+"newTransfer.participant" = "Участник";
+"newTransfer.participants" = "Участники";
+
+"amountSplit.align" = "Выровнять";
+
+"profile.tab.name" = "Настройки";
+"profile.title" = "Профиль";
+
+"contacts.title" = "Контакты";
+"contacts.link.name" = "Контакты";
+"contacts.empty.message" = "Контактов нет";
+
+"addContacts.title" = "Новый контакт";
+
+"userEjectSelection.selectedSection.header" = "Выбранные";
+"userEjectSelection.allSection.header" = "Пользователи";
+
+"userSelectionPicker.notSelected" = "Не выбран";
+
+"summary.subtitle" = "Итоги";

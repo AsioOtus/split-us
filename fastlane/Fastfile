@@ -1,0 +1,18 @@
+import("lanes/utils.rb")
+
+default_platform(:ios)
+
+lane :testflight_deploy do
+  skip_docs
+
+  update_code_signing_settings(use_automatic_signing: false)
+
+  app_store_connect_api_key
+  setup_ci
+  match
+  handle_version
+  gym
+  pilot
+
+  restore_automatic_code_signing
+end

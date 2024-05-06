@@ -1,0 +1,95 @@
+{
+  "pins" : [
+    {
+      "identity" : "combine-schedulers",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/combine-schedulers",
+      "state" : {
+        "revision" : "9dc9cbe4bc45c65164fa653a563d8d8db61b09bb",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "jwtdecode.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/JWTDecode.swift.git",
+      "state" : {
+        "revision" : "58af7278797871e460d79496621b3e5366b865b2",
+        "version" : "3.1.0"
+      }
+    },
+    {
+      "identity" : "multitool",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AsioOtus/Multitool",
+      "state" : {
+        "branch" : "main",
+        "revision" : "12dd7547df5fe03231532a3d0d9be2a512634272"
+      }
+    },
+    {
+      "identity" : "multitoolcomplex",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AsioOtus/MultitoolComplex",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ffd1424642306561e1fcca26cbd84151d18b5b5a"
+      }
+    },
+    {
+      "identity" : "networkutil",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AsioOtus/networkutil",
+      "state" : {
+        "branch" : "main",
+        "revision" : "fcb0219ec90941b16450902bc87a70d40972ba2f"
+      }
+    },
+    {
+      "identity" : "splitter-shared-models",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AsioOtus/splitter-shared-models",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2a88d5dc5c35eadd52889127dc0e906a950463e5"
+      }
+    },
+    {
+      "identity" : "swift-clocks",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-clocks",
+      "state" : {
+        "revision" : "a8421d68068d8f45fbceb418fbf22c5dad4afd33",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swift-concurrency-extras",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-concurrency-extras",
+      "state" : {
+        "revision" : "bb5059bde9022d69ac516803f4f227d8ac967f71",
+        "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "swift-dependencies",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-dependencies",
+      "state" : {
+        "revision" : "4e1eb6e28afe723286d8cc60611237ffbddba7c5",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "xctest-dynamic-overlay",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
+      "state" : {
+        "revision" : "23cbf2294e350076ea4dbd7d5d047c1e76b03631",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}
