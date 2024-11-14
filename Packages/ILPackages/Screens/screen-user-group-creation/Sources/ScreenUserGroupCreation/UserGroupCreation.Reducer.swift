@@ -1,9 +1,9 @@
+import ComponentsTCAUser
 import ComposableArchitecture
-import Multitool
 import DLServices
 import DLModels
-import UserComponents
-import DLUtils
+import ILComponents
+import Multitool
 
 extension UserGroupCreation {
 	@Reducer
@@ -98,7 +98,7 @@ private extension UserGroupCreation.Reducer {
 		state.contactsSelection = .loading()
 
 		return .run { send in
-			let contacts = await Loadable.result { try await usersService.contacts() }
+			let contacts = await Loadable.result { try await usersService.contacts(page: .init(number: 0, size: 100)) }
 			await send(.onContactsLoaded(contacts))
 		}
 	}

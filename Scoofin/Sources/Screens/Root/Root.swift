@@ -1,6 +1,6 @@
 import ComposableArchitecture
 import DLModels
-import DLUtils
+import Multitool
 import ScreenLogin
 import ScreenRegistration
 
@@ -15,6 +15,9 @@ extension Root {
 		case main(Main.Reducer.State)
 		case login(Login.State)
 		case registration(Registration.State)
+
+		var isSplash: Bool { if case .splash = self { true } else { false } }
+		var isMain:   Bool { if case .main   = self { true } else { false } }
 	}
 }
 
@@ -23,7 +26,8 @@ extension Root {
 	enum Action {
 		case initialize
 
-		case onUserLoaded(Loadable<User>)
+		case onUserLoadingSuccess(User)
+		case onUserLoadingFailure(Error)
 		case onLogout
 
 		case splash

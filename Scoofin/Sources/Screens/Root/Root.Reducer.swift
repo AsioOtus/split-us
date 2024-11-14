@@ -1,8 +1,9 @@
 import ComposableArchitecture
 import Dependencies
 import DLModels
-import DLUtils
+import DLErrors
 import NetworkUtil
+import Multitool
 import MultitoolFormatters
 import OSLog
 import ScreenLogin
@@ -15,36 +16,31 @@ extension Root {
 		typealias Action = Root.Action
 		
 		@Dependency(\.analyticsService) var analyticsService
-		@Dependency(\.logoutEventChannel) var logoutEventChannel
 		@Dependency(\.authorizationService) var authorizationService
+		@Dependency(\.currentUserService) var currentUserService
 		@Dependency(\.localAuthorizationService) var localAuthorizationService
-		@Dependency(\.usersService) var usersService
-		@Dependency(\.tokensValidationService) var tokensValidationService
+		@Dependency(\.localPersistenceService) var localPersistenceService
+		@Dependency(\.logoutEventChannel) var logoutEventChannel
 		@Dependency(\.networkController) var networkController
+		@Dependency(\.networkConnectivityService) var networkConnectivityService
+		@Dependency(\.tokensValidationService) var tokensValidationService
+		@Dependency(\.userLocalService) var userLocalService
+		@Dependency(\.usersService) var usersService
 
 		var body: some ReducerOf<Self> {
 			Reduce { state, action in
 				switch action {
-				case .initialize:
-					return initialize(&state)
+				case .initialize: return initialize(&state)
 
-				case .onUserLoaded(let user):
-					onUserLoaded(user, &state)
+				case .onUserLoadingSuccess(let user): onUserLoadingSuccess(user, &state)
+				case .onUserLoadingFailure(let error): onUserLoadingFailure(error, &state)
+				case .onLogout: return onLogout(&state)
 
-				case .onLogout:
-					return onLogout(&state)
+				case .login(.onLoginRequestLoaded(.successful)): onLogin(&state)
+				case .login(.onRegistrationButtonTap): onRegistrationButtonTap(&state)
 
-				case .login(.onLoginRequestLoaded(.successful(let authCredentials))):
-					onLogin(tokens: authCredentials.tokens, user: authCredentials.user, &state)
-
-				case .login(.onRegistrationButtonTap):
-					onRegistrationButtonTap(&state)
-
-				case .registration(.onRegistrationLoaded(.success(let authCredentials))):
-					onRegistration(tokens: authCredentials.tokens, user: authCredentials.user, &state)
-
-				case .registration(.onLogInButtonTap):
-					onLogInButtonTap(&state)
+				case .registration(.onRegistrationLoaded(.success)): onRegistration(&state)
+				case .registration(.onLogInButtonTap): onLogInButtonTap(&state)
 
 				default: break
 				}
@@ -66,36 +62,34 @@ extension Root {
 
 private extension Root.Reducer {
 	func initialize (_ state: inout State) -> Effect<Action> {
-		.merge(
+		if let user = try? userLocalService.loadInitialUser() {
+			signInOffline(user, &state)
+		}
+
+		return .merge(
 			subscribeLogout(),
 			subscribeNetworkLogs(),
 			loadUser(&state)
 		)
 	}
 
-	func onUserLoaded (_ userResult: Loadable<User>, _ state: inout Root.Reducer.State) {
-		switch userResult {
-		case .initial:
-			state = .splash
+	func onUserLoadingSuccess (_ user: User, _ state: inout State) {
+		guard state.isSplash else { return }
+		state = .main(.init())
+		analyticsService.log(.login(mode: .silent, username: user.username))
+	}
 
-		case .processing:
-			state = .splash
-
-		case .successful(let user):
-			state = .main(.init(currentUser: user))
-			analyticsService.log(.login(mode: .silent, username: user.username))
-
-		case .failed:
-			localAuthorizationService.deleteTokenPair()
-			state = .login(.init())
-		}
+	func onUserLoadingFailure (_ error: Error, _ state: inout State) {
+		guard state.isSplash else { return }
+		state = .login(.init())
 	}
 
 	func onLogout (_ state: inout Root.Reducer.State) -> Effect<Action> {
 		defer {
 			localAuthorizationService.deleteTokenPair()
-			analyticsService.log(.logout(username: state.main?.currentUser.username))
 			state = .login(.init())
+			analyticsService.log(.logout(username: currentUserService.user.value?.username ?? ""))
+			currentUserService.delete()
 		}
 
 		guard let tokenPair = try? localAuthorizationService.savedTokenPair()
@@ -106,12 +100,12 @@ private extension Root.Reducer {
 		}
 	}
 
-	func onLogin (tokens: TokenPair, user: User, _ state: inout State) {
-		signIn(tokens: tokens, user: user, &state)
+	func onLogin (_ state: inout State) {
+		signIn(&state)
 	}
 
-	func onRegistration (tokens: TokenPair, user: User, _ state: inout State) {
-		signIn(tokens: tokens, user: user, &state)
+	func onRegistration (_ state: inout State) {
+		signIn(&state)
 	}
 
 	func onRegistrationButtonTap (_ state: inout State) {
@@ -132,16 +126,20 @@ private extension Root.Reducer {
 			return .none
 		}
 
-		state = .splash
-
 		return .run { send in
-			let userResult = await Loadable.result { try await usersService.user() }
-			await send(.onUserLoaded(userResult))
+			let user = try await usersService.loadInitialUser()
+			await send(.onUserLoadingSuccess(user))
+		} catch: { error, send in
+			await send(.onUserLoadingFailure(error))
 		}
 	}
 
 	func subscribeLogout () -> Effect<Action> {
-		subscribe(to: logoutEventChannel) { _ in .onLogout }
+		.run { send in
+			for await _ in logoutEventChannel {
+				await send(.onLogout)
+			}
+		}
 	}
 
 	func subscribeNetworkLogs () -> Effect<Action> {
@@ -152,13 +150,14 @@ private extension Root.Reducer {
 		}
 	}
 
-	func signIn (tokens: TokenPair, user: User, _ state: inout State) {
-		do {
-			try localAuthorizationService.saveTokenPair(tokens)
-			state = .main(.init(currentUser: user))
-		} catch {
-			
-		}
+	func signIn (_ state: inout State) {
+		state = .main(.init())
+	}
+
+	func signInOffline (_ user: User, _ state: inout State) {
+		guard state.isSplash else { return }
+		state = .main(.init())
+		analyticsService.log(.login(mode: .offline, username: user.username))
 	}
 }
 

@@ -5,40 +5,32 @@ import PackageDescription
 let package = Package(
 	name: "dl-utils",
 	platforms: [
-		.iOS(.v16),
+		.iOS(.v17),
 		.macOS(.v13)
 	],
 	products: [
 		.library(
-			name: "DLUtils",
+			name: "CombineUtils",
 			targets: [
-				"DLUtils",
+				"CombineUtils",
 			]
-		)
-	],
-	dependencies: [
-		.package(
-			url: "https://github.com/AsioOtus/multitool",
-			from: "1.0.0"
 		),
-		.package(
-			url: "https://github.com/pointfreeco/swift-composable-architecture",
-			exact: "1.8.0"
+		.library(
+			name: "CoreLocationUtils",
+			targets: [
+				"CoreLocationUtils",
+			]
+		),
+		.library(
+			name: "SwiftUtils",
+			targets: [
+				"SwiftUtils",
+			]
 		),
 	],
 	targets: [
-		.target(
-			name: "DLUtils",
-			dependencies: [
-				.product(
-					name: "Multitool",
-					package: "multitool"
-				),
-				.product(
-					name: "ComposableArchitecture",
-					package: "swift-composable-architecture"
-				),
-			]
-		),
+		.target(name: "CombineUtils"),
+		.target(name: "CoreLocationUtils"),
+		.target(name: "SwiftUtils"),
 	]
 )

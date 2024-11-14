@@ -1,8 +1,7 @@
 import ComposableArchitecture
 import DLModels
-import DLUtils
 import ScreenContactList
-import ScreenProfile
+import ScreenSettings
 import ScreenUserGroupList
 
 enum Main { }
@@ -10,18 +9,14 @@ enum Main { }
 extension Main {
 	@ObservableState
 	struct State: Equatable {
-		let currentUser: User
-
 		var userGroups: UserGroups.State
 		var contactsList: ContactsList.State
-		var profile: Profile.State
+		var settings: Settings.State
 
-		init (currentUser: User) {
-			self.currentUser = currentUser
-
-			self.userGroups = .init(currentUser: currentUser)
+		init () {
+			self.userGroups = .init()
 			self.contactsList = .init()
-			self.profile = .init(user: currentUser)
+			self.settings = .init()
 		}
 	}
 }
@@ -31,6 +26,6 @@ extension Main {
 	enum Action {
 		case userGroups(UserGroups.Reducer.Action)
 		case contactsList(ContactsList.Action)
-		case profile(Profile.Action)
+		case settings(Settings.Action)
 	}
 }

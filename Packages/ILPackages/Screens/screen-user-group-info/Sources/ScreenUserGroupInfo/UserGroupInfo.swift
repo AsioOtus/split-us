@@ -1,8 +1,10 @@
 import ComposableArchitecture
+import DLModels
+import Foundation
+import Multitool
 import ScreenUserGroupEditing
 import ScreenUserGroupUserAdding
-import DLModels
-import DLUtils
+import ScreenUserProfile
 
 // MARK: - Feature
 public enum UserGroupInfo { }
@@ -12,10 +14,11 @@ extension UserGroupInfo {
 	@ObservableState
 	public struct State: Equatable {
 		var userGroup: Loadable<UserGroup>
-		var users: Loadable<[User.Compact]> = .initial()
+		var users: Loadable<[User.Compact]> = .initial
 
 		@Presents var userGroupEditing: UserGroupEditing.State?
 		@Presents var userGroupUsersAdding: UserGroupUsersAdding.State?
+		@Presents var userProfile: UserProfile.State?
 
 		public init (userGroup: UserGroup) {
 			self.userGroup = .successful(userGroup)
@@ -33,8 +36,10 @@ extension UserGroupInfo {
 
 		case onEditUserGroupButtonTap
 		case onAddUsersButtonTap
+		case onUserTap(userId: UUID)
 
 		case userGroupEditing(PresentationAction<UserGroupEditing.Action>)
 		case userGroupUsersAdding(PresentationAction<UserGroupUsersAdding.Action>)
+		case userProfile(PresentationAction<UserProfile.Action>)
 	}
 }

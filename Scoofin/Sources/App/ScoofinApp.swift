@@ -1,6 +1,6 @@
 import Combine
 import ComposableArchitecture
-import Debug
+import ILDebug
 import ILLocalization
 import DLServices
 import SwiftUI
@@ -25,6 +25,7 @@ struct ScoofinApp: App {
 					}
 				)
 			)
+			.tint(.cyan)
 		}
 	}
 }

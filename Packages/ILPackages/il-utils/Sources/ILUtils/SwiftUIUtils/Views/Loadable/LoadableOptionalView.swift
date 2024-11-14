@@ -1,4 +1,4 @@
-import DLUtils
+import Multitool
 import SwiftUI
 
 public struct LoadableOptionalView<
@@ -42,9 +42,9 @@ FailedView: View {
 	public var body: some View {
 		switch value {
 		case .initial: initialView()
-		case .processing: loadingView()
+		case .loading: loadingView()
 		case .successful(let value): successfulView(value)
-		case .failed(let error): failedView(error)
+		case .failed(let error, _): failedView(error)
 		}
 	}
 	

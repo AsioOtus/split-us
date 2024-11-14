@@ -1,6 +1,5 @@
 import ComposableArchitecture
 import DLModels
-import DLUtils
 
 extension Registration {
 	@Reducer
@@ -135,7 +134,7 @@ private extension Registration.Reducer {
 	}
 	
 	func onRegistrationFailure (_ error: Error, _ state: inout State) {
-		state.registrationRequest = .failed(error)
+		state.registrationRequest = .failed(error: error)
 	}
 }
 

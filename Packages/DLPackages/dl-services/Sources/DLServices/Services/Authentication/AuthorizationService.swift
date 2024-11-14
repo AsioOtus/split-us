@@ -11,15 +11,27 @@ public protocol PAuthorizationService {
 }
 
 public struct AuthorizationService: PAuthorizationService {
+	@Dependency(\.currentUserService) var currentUserService
+	@Dependency(\.localAuthorizationService) var localAuthorizationService
+	@Dependency(\.localPersistenceService) var localPersistenceService
 	@Dependency(\.networkController) var networkController
+	@Dependency(\.userLocalService) var userLocalService
 
 	public func register (user: User.New) async throws -> (tokens: TokenPair, user: User) {
 		let responseModel = try await networkController
 			.send(Requests.Register(user: user))
 			.unfold()
 
-		let (tokens, user) = (responseModel.tokenPair, responseModel.user)
-		return (tokens, user)
+		let (tokenPair, user) = (responseModel.tokenPair, responseModel.user)
+
+		localPersistenceService.clear()
+
+		try localAuthorizationService.saveTokenPair(tokenPair)
+		try userLocalService.saveUser(user)
+		currentUserService.set(user: user)
+		try? userLocalService.saveUser(user.compact)
+
+		return (tokenPair, user)
 	}
 
 	public func authenticate (username: String, password: String) async throws -> (tokens: TokenPair, user: User) {
@@ -27,8 +39,16 @@ public struct AuthorizationService: PAuthorizationService {
 			.send(Requests.Authenticate(username: username, password: password))
 			.unfold()
 
-		let (tokens, user) = (responseModel.tokenPair, responseModel.user)
-		return (tokens, user)
+		let (tokenPair, user) = (responseModel.tokenPair, responseModel.user)
+
+		userLocalService.clearIfUserNotMatch(user.id)
+
+		try localAuthorizationService.saveTokenPair(tokenPair)
+		try userLocalService.saveUser(user)
+		currentUserService.set(user: user)
+		try? userLocalService.saveUser(user.compact)
+
+		return (tokenPair, user)
 	}
 
 	public func reauthenticate (refreshToken: String, userId: UUID) async throws -> TokenPair {
@@ -36,6 +56,8 @@ public struct AuthorizationService: PAuthorizationService {
 			.send(Requests.Reauthenticate(userId: userId, refreshToken: refreshToken))
 			.unfold()
 			.tokenPair
+
+		try localAuthorizationService.saveTokenPair(newTokenPair)
 
 		return newTokenPair
 	}

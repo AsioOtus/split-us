@@ -13,18 +13,18 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 # Available Actions
 
-### testflight_deploy
+### handle_version
 
 ```sh
-[bundle exec] fastlane testflight_deploy
+[bundle exec] fastlane handle_version
 ```
 
 
 
-### test
+### testflight_deploy
 
 ```sh
-[bundle exec] fastlane test
+[bundle exec] fastlane testflight_deploy
 ```
 
 

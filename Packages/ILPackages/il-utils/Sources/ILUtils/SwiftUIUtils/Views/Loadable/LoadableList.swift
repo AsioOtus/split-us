@@ -1,4 +1,4 @@
-import DLUtils
+import Multitool
 import SwiftUI
 
 public struct LoadableList<
@@ -45,7 +45,7 @@ FailedView: View {
 		List {
 			switch collection {
 			case .initial: initialView()
-			case .processing(let loading): loadingView(loading)
+			case .loading(_, let value): loadingView(value)
 			case .successful(let collection) where !collection.isEmpty: successfulView(collection)
 			case .successful: EmptyView()
 			case .failed: EmptyView()
@@ -54,25 +54,25 @@ FailedView: View {
 		.overlay {
 			switch collection {
 			case .initial: initialView()
-			case .processing(let loading): loadingPlaceholderView(loading)
+			case .loading(_, let value): loadingPlaceholderView(value)
 			case .successful(let collection) where collection.isEmpty: emptyView()
 			case .successful: EmptyView()
-			case .failed(let error): failedView(error)
+			case .failed(let error, _): failedView(error)
 			}
 		}
 	}
 	
 	@ViewBuilder
-	func loadingView (_ loading: Loading<Elements>) -> some View {
-		if let collection = loading.previousValue {
-			successfulView(collection)
+	func loadingView (_ elements: Elements?) -> some View {
+		if let elements {
+			successfulView(elements)
 		}
 	}
 	
 	@ViewBuilder
-	func loadingPlaceholderView (_ loading: Loading<Elements>) -> some View {
-		if let collection = loading.previousValue {
-			if collection.isEmpty {
+	func loadingPlaceholderView (_ elements: Elements?) -> some View {
+		if let elements {
+			if elements.isEmpty {
 				emptyView()
 			}
 		} else {

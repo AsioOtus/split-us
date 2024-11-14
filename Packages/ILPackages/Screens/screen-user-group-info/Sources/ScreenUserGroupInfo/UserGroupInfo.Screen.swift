@@ -1,27 +1,26 @@
 import ComposableArchitecture
-import DLUtils
+import DLModels
+import ILComponents
 import ILModels
 import ILModelsMappers
 import ILUtils
 import ScreenUserGroupEditing
 import ScreenUserGroupUserAdding
-import DLModels
+import ScreenUserProfile
 import SwiftUI
-import UnavailablePlaceholderComponents
-import UserComponents
 
 extension UserGroupInfo {
 	public struct Screen: View {
 		@Bindable var store: StoreOf<Reducer>
 
-		let userInfoModelMapper = UserInfoModel.Mapper.default
+		let userScreenModelMapper = UserScreenModel.Mapper.default
 
 		public init (store: StoreOf<Reducer>) {
 			self.store = store
 		}
 
 		public var body: some View {
-			Form {
+			List {
 				Section {
 					userGroupNameView()
 				}
@@ -36,9 +35,7 @@ extension UserGroupInfo {
 			.task {
 				store.send(.initialize)
 			}
-			.toolbar {
-				editUserGroupToolbarItem()
-			}
+			.toolbar(content: toolbar)
 			.fullScreenCover(
 				item: $store.scope(state: \.userGroupEditing, action: \.userGroupEditing)
 			) { store in
@@ -49,6 +46,9 @@ extension UserGroupInfo {
 				item: $store.scope(state: \.userGroupUsersAdding, action: \.userGroupUsersAdding)
 			) { store in
 				UserGroupUsersAdding.Screen(store: store)
+			}
+			.navigationDestination(item: $store.scope(state: \.userProfile, action: \.userProfile)) { store in
+				UserProfile.Screen(store: store)
 			}
 		}
 	}
@@ -75,7 +75,7 @@ private extension UserGroupInfo.Screen {
 			collection: store.users,
 			loadingView: usersLoadingView,
 			emptyView: usersEmptyView,
-			elementView: userssuccessfulView,
+			elementView: usersSuccessfulView,
 			failedView: usersErrorView
 		)
 	}
@@ -89,12 +89,17 @@ private extension UserGroupInfo.Screen {
 		StandardEmptyView(message: .userGroupInfoUsersEmptyMessage, systemImage: "person.2.crop.square.stack")
 	}
 
-	func userssuccessfulView (_ user: User.Compact) -> some View {
-		UserDetailedView(user: userInfoModelMapper.map(user))
+	func usersSuccessfulView (_ user: User.Compact) -> some View {
+		Button {
+			store.send(.onUserTap(userId: user.id))
+		} label: {
+			UserDetailedView(user: userScreenModelMapper.map(user))
+		}
+		.buttonStyle(.navigation)
 	}
 
 	func usersErrorView (_ error: Error) -> some View {
-		StandardErrorView()
+		StandardErrorView(error: error)
 	}
 }
 
@@ -109,13 +114,21 @@ private extension UserGroupInfo.Screen {
 		}
 	}
 
-	func editUserGroupToolbarItem () -> some ToolbarContent {
-		ToolbarItem(placement: .navigationBarTrailing) {
-			Button {
-				store.send(.onEditUserGroupButtonTap)
-			} label: {
-				Image(systemName: "square.and.pencil")
-			}
+	@ToolbarContentBuilder
+	func toolbar () -> some ToolbarContent {
+		if let userGroupName = store.userGroup.value?.name {
+			TitleSubtitleView(
+				title: LocalizedStringKey(userGroupName),
+				subtitle: .generalInformation
+			)
+			.asToolbarItem(placement: .principal)
 		}
+
+		Button {
+			store.send(.onEditUserGroupButtonTap)
+		} label: {
+			Image(systemName: "square.and.pencil")
+		}
+		.asToolbarItem(placement: .topBarTrailing)
 	}
 }

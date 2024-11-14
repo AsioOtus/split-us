@@ -8,17 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		3A1815332B8D258D0066606F /* dl-models in Resources */ = {isa = PBXBuildFile; fileRef = 3A1815322B8D258C0066606F /* dl-models */; };
+		3A1B22352C277C07007FA5E6 /* screen-expense-group-editing in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B22322C277C07007FA5E6 /* screen-expense-group-editing */; };
+		3A1B22372C277C07007FA5E6 /* screen-expense-editing in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B22342C277C07007FA5E6 /* screen-expense-editing */; };
+		3A2259CA2C277DCF00C1C999 /* ScreenExpenseEditing in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2259C92C277DCF00C1C999 /* ScreenExpenseEditing */; };
+		3A2259CC2C277DCF00C1C999 /* ScreenExpenseGroupEditing in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2259CB2C277DCF00C1C999 /* ScreenExpenseGroupEditing */; };
+		3A2F86802C32B44600197759 /* ILDebug in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2F867F2C32B44600197759 /* ILDebug */; };
+		3A2F86822C32B4B700197759 /* ILDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2F86812C32B4B700197759 /* ILDesignSystem */; };
 		3A3099C22BC8971B00CF7D34 /* ILModels in Frameworks */ = {isa = PBXBuildFile; productRef = 3A3099C12BC8971B00CF7D34 /* ILModels */; };
 		3A3099C62BC897D600CF7D34 /* ILComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 3A3099C52BC897D600CF7D34 /* ILComponents */; };
 		3A3099C82BC899FF00CF7D34 /* ILLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 3A3099C72BC899FF00CF7D34 /* ILLogic */; };
 		3A3099CA2BC89A6A00CF7D34 /* ILFormatters in Frameworks */ = {isa = PBXBuildFile; productRef = 3A3099C92BC89A6A00CF7D34 /* ILFormatters */; };
 		3A38AA1B2BE4467000C3C367 /* il-utils in Resources */ = {isa = PBXBuildFile; fileRef = 3A38AA1A2BE4466F00C3C367 /* il-utils */; };
+		3A3FC5B72C7E5F97001E0BAF /* dl-persistence in Resources */ = {isa = PBXBuildFile; fileRef = 3A3FC5B62C7E5F97001E0BAF /* dl-persistence */; };
+		3A3FC5BA2C7E5FC1001E0BAF /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FC5B82C7E5FC1001E0BAF /* db.xcdatamodeld */; };
+		3A3FC5BC2C7E5FD3001E0BAF /* DLPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = 3A3FC5BB2C7E5FD3001E0BAF /* DLPersistence */; };
+		3A61AEEB2C7838BC00DD38B5 /* ScreenUserProfile in Frameworks */ = {isa = PBXBuildFile; productRef = 3A61AEEA2C7838BC00DD38B5 /* ScreenUserProfile */; };
 		3A80A9D32BE457BF0057C032 /* il-preview in Resources */ = {isa = PBXBuildFile; fileRef = 3A80A9D22BE457BF0057C032 /* il-preview */; };
 		3A88AF2D2B8D37C000C3B722 /* DLModels in Frameworks */ = {isa = PBXBuildFile; productRef = 3A88AF2C2B8D37C000C3B722 /* DLModels */; };
 		3A88AF2F2B8D37C000C3B722 /* DLNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 3A88AF2E2B8D37C000C3B722 /* DLNetwork */; };
 		3A88AF312B8D37C000C3B722 /* DLServices in Frameworks */ = {isa = PBXBuildFile; productRef = 3A88AF302B8D37C000C3B722 /* DLServices */; };
 		3A8D34EF2B3251E2001B6744 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8D34EE2B3251E2001B6744 /* ComposableArchitecture */; };
-		3A8D34F22B3255B6001B6744 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8D34F12B3255B6001B6744 /* DesignSystem */; };
+		3A956A1D2C7E8C2700264316 /* screen-settings in Resources */ = {isa = PBXBuildFile; fileRef = 3A956A1C2C7E8C2600264316 /* screen-settings */; };
+		3A956A1F2C7E8D1200264316 /* ScreenSettings in Frameworks */ = {isa = PBXBuildFile; productRef = 3A956A1E2C7E8D1200264316 /* ScreenSettings */; };
 		3A95B3532BC799CD00F99EE8 /* il-debug in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B34A2BC799CC00F99EE8 /* il-debug */; };
 		3A95B3542BC799CD00F99EE8 /* il-models in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B34B2BC799CC00F99EE8 /* il-models */; };
 		3A95B3552BC799CD00F99EE8 /* il-formatters in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B34C2BC799CC00F99EE8 /* il-formatters */; };
@@ -26,40 +37,34 @@
 		3A95B3582BC799CD00F99EE8 /* il-logic in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B34F2BC799CD00F99EE8 /* il-logic */; };
 		3A95B3592BC799CD00F99EE8 /* il-localization in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B3502BC799CD00F99EE8 /* il-localization */; };
 		3A95B35B2BC799CD00F99EE8 /* il-components in Resources */ = {isa = PBXBuildFile; fileRef = 3A95B3522BC799CD00F99EE8 /* il-components */; };
-		3A9A68F72B4757BF006561A6 /* ScreenUserDetails in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9A68F62B4757BF006561A6 /* ScreenUserDetails */; };
 		3A9EDACA2BC79917007DE302 /* screen-user-group-creation in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDA9B2BC79916007DE302 /* screen-user-group-creation */; };
-		3A9EDACB2BC79917007DE302 /* screen-profile in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDA9C2BC79916007DE302 /* screen-profile */; };
 		3A9EDACC2BC79917007DE302 /* screen-contact-list in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDA9D2BC79916007DE302 /* screen-contact-list */; };
 		3A9EDACD2BC79917007DE302 /* screen-login in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDA9E2BC79916007DE302 /* screen-login */; };
 		3A9EDACE2BC79917007DE302 /* screen-user-group-user-adding in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDA9F2BC79916007DE302 /* screen-user-group-user-adding */; };
 		3A9EDACF2BC79917007DE302 /* screen-add-contacts in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA02BC79916007DE302 /* screen-add-contacts */; };
 		3A9EDAD02BC79917007DE302 /* screen-summary in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA12BC79916007DE302 /* screen-summary */; };
 		3A9EDAD12BC79917007DE302 /* screen-user-group-details in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA22BC79916007DE302 /* screen-user-group-details */; };
-		3A9EDAD22BC79917007DE302 /* screen-transfer-group-editing in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA32BC79916007DE302 /* screen-transfer-group-editing */; };
-		3A9EDAD32BC79917007DE302 /* screen-user-details in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA42BC79916007DE302 /* screen-user-details */; };
-		3A9EDAD42BC79917007DE302 /* screen-transfer-list in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA52BC79916007DE302 /* screen-transfer-list */; };
 		3A9EDAD52BC79917007DE302 /* screen-user-group-editing in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA62BC79916007DE302 /* screen-user-group-editing */; };
-		3A9EDAD62BC79917007DE302 /* screen-transfer-editing in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA72BC79916007DE302 /* screen-transfer-editing */; };
 		3A9EDAD72BC79917007DE302 /* screen-user-group-info in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA82BC79916007DE302 /* screen-user-group-info */; };
 		3A9EDAD82BC79917007DE302 /* screen-registration in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAA92BC79916007DE302 /* screen-registration */; };
 		3A9EDAD92BC79917007DE302 /* screen-user-group-list in Resources */ = {isa = PBXBuildFile; fileRef = 3A9EDAAA2BC79916007DE302 /* screen-user-group-list */; };
 		3AA7E0882B45960400846BE4 /* MultitoolKitFormatters in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA7E0872B45960400846BE4 /* MultitoolKitFormatters */; };
-		3AC876092BE448EB00BCD347 /* DLUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 3AC876082BE448EB00BCD347 /* DLUtils */; };
+		3AA8CE8E2C78339900CDD2FF /* screen-user-profile in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8CE8D2C78339800CDD2FF /* screen-user-profile */; };
 		3AC8760B2BE448F000BCD347 /* ILUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 3AC8760A2BE448F000BCD347 /* ILUtils */; };
+		3ACA38AA2C826343007BF14E /* ILComponentsTCA in Frameworks */ = {isa = PBXBuildFile; productRef = 3ACA38A92C826343007BF14E /* ILComponentsTCA */; };
 		3ACBAB4D2BE0F9DC0011C728 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3ACBAB4A2BE0F9DC0011C728 /* Localizable.strings */; };
+		3AD109FF2C7E17080061C97B /* ScoofinLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD109FE2C7E17080061C97B /* ScoofinLabApp.swift */; };
+		3AD10A012C7E17090061C97B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD10A002C7E17090061C97B /* ContentView.swift */; };
+		3AD10A032C7E170A0061C97B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD10A022C7E170A0061C97B /* Assets.xcassets */; };
+		3AD10A062C7E170A0061C97B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD10A052C7E170A0061C97B /* Preview Assets.xcassets */; };
 		3AD18FA22BC89B79007CC0C5 /* ILLocalization in Frameworks */ = {isa = PBXBuildFile; productRef = 3AD18FA12BC89B79007CC0C5 /* ILLocalization */; };
 		3AD322E62B32505B00110574 /* dl-network in Resources */ = {isa = PBXBuildFile; fileRef = 3AD322E32B32505B00110574 /* dl-network */; };
 		3AD322E72B32505B00110574 /* dl-services in Resources */ = {isa = PBXBuildFile; fileRef = 3AD322E42B32505B00110574 /* dl-services */; };
-		3AE4473F2B33334700D45A1B /* Debug in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE4473E2B33334700D45A1B /* Debug */; };
 		3AF696162B33ADA60060862E /* ScreenAddContacts in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696152B33ADA60060862E /* ScreenAddContacts */; };
 		3AF696182B33ADA60060862E /* ScreenContactList in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696172B33ADA60060862E /* ScreenContactList */; };
 		3AF6961A2B33ADA60060862E /* ScreenLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696192B33ADA60060862E /* ScreenLogin */; };
-		3AF6961C2B33ADA60060862E /* ScreenProfile in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF6961B2B33ADA60060862E /* ScreenProfile */; };
 		3AF6961E2B33ADA60060862E /* ScreenRegistration in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF6961D2B33ADA60060862E /* ScreenRegistration */; };
 		3AF696202B33ADA60060862E /* ScreenSummary in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF6961F2B33ADA60060862E /* ScreenSummary */; };
-		3AF696222B33ADA60060862E /* ScreenTransferEditing in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696212B33ADA60060862E /* ScreenTransferEditing */; };
-		3AF696242B33ADA60060862E /* ScreenTransferGroupEditing in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696232B33ADA60060862E /* ScreenTransferGroupEditing */; };
-		3AF696262B33ADA60060862E /* ScreenTransferList in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696252B33ADA60060862E /* ScreenTransferList */; };
 		3AF696282B33ADA60060862E /* ScreenUserGroupCreation in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696272B33ADA60060862E /* ScreenUserGroupCreation */; };
 		3AF6962A2B33ADA60060862E /* ScreenUserGroupDetails in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF696292B33ADA60060862E /* ScreenUserGroupDetails */; };
 		3AF6962C2B33ADA60060862E /* ScreenUserGroupEditing in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF6962B2B33ADA60060862E /* ScreenUserGroupEditing */; };
@@ -93,8 +98,16 @@
 /* Begin PBXFileReference section */
 		3A004F432BC76436008BEDEE /* dl-logic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-logic"; sourceTree = "<group>"; };
 		3A1815322B8D258C0066606F /* dl-models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-models"; sourceTree = "<group>"; };
+		3A1B22322C277C07007FA5E6 /* screen-expense-group-editing */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-expense-group-editing"; sourceTree = "<group>"; };
+		3A1B22342C277C07007FA5E6 /* screen-expense-editing */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-expense-editing"; sourceTree = "<group>"; };
 		3A38AA1A2BE4466F00C3C367 /* il-utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-utils"; sourceTree = "<group>"; };
+		3A3FC5B62C7E5F97001E0BAF /* dl-persistence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-persistence"; sourceTree = "<group>"; };
+		3A3FC5B92C7E5FC1001E0BAF /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
+		3A4DED0E2C322AC4009FCFD5 /* il-components-tca */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-components-tca"; sourceTree = "<group>"; };
+		3A7A1D982C3153FE00BA871B /* il-utils-tca */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-utils-tca"; sourceTree = "<group>"; };
+		3A7A1D992C3154CD00BA871B /* il-debug-tca */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-debug-tca"; sourceTree = "<group>"; };
 		3A80A9D22BE457BF0057C032 /* il-preview */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-preview"; sourceTree = "<group>"; };
+		3A956A1C2C7E8C2600264316 /* screen-settings */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-settings"; sourceTree = "<group>"; };
 		3A95B34A2BC799CC00F99EE8 /* il-debug */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-debug"; sourceTree = "<group>"; };
 		3A95B34B2BC799CC00F99EE8 /* il-models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-models"; sourceTree = "<group>"; };
 		3A95B34C2BC799CC00F99EE8 /* il-formatters */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-formatters"; sourceTree = "<group>"; };
@@ -103,23 +116,24 @@
 		3A95B3502BC799CD00F99EE8 /* il-localization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-localization"; sourceTree = "<group>"; };
 		3A95B3522BC799CD00F99EE8 /* il-components */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "il-components"; sourceTree = "<group>"; };
 		3A9EDA9B2BC79916007DE302 /* screen-user-group-creation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-creation"; sourceTree = "<group>"; };
-		3A9EDA9C2BC79916007DE302 /* screen-profile */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-profile"; sourceTree = "<group>"; };
 		3A9EDA9D2BC79916007DE302 /* screen-contact-list */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-contact-list"; sourceTree = "<group>"; };
 		3A9EDA9E2BC79916007DE302 /* screen-login */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-login"; sourceTree = "<group>"; };
 		3A9EDA9F2BC79916007DE302 /* screen-user-group-user-adding */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-user-adding"; sourceTree = "<group>"; };
 		3A9EDAA02BC79916007DE302 /* screen-add-contacts */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-add-contacts"; sourceTree = "<group>"; };
 		3A9EDAA12BC79916007DE302 /* screen-summary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-summary"; sourceTree = "<group>"; };
 		3A9EDAA22BC79916007DE302 /* screen-user-group-details */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-details"; sourceTree = "<group>"; };
-		3A9EDAA32BC79916007DE302 /* screen-transfer-group-editing */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-transfer-group-editing"; sourceTree = "<group>"; };
-		3A9EDAA42BC79916007DE302 /* screen-user-details */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-details"; sourceTree = "<group>"; };
-		3A9EDAA52BC79916007DE302 /* screen-transfer-list */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-transfer-list"; sourceTree = "<group>"; };
 		3A9EDAA62BC79916007DE302 /* screen-user-group-editing */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-editing"; sourceTree = "<group>"; };
-		3A9EDAA72BC79916007DE302 /* screen-transfer-editing */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-transfer-editing"; sourceTree = "<group>"; };
 		3A9EDAA82BC79916007DE302 /* screen-user-group-info */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-info"; sourceTree = "<group>"; };
 		3A9EDAA92BC79916007DE302 /* screen-registration */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-registration"; sourceTree = "<group>"; };
 		3A9EDAAA2BC79916007DE302 /* screen-user-group-list */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-group-list"; sourceTree = "<group>"; };
+		3AA8CE8D2C78339800CDD2FF /* screen-user-profile */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "screen-user-profile"; sourceTree = "<group>"; };
 		3ACBAB4B2BE0F9DC0011C728 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3ACBAB4C2BE0F9DC0011C728 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3AD109FC2C7E17080061C97B /* ScoofinLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoofinLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD109FE2C7E17080061C97B /* ScoofinLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoofinLabApp.swift; sourceTree = "<group>"; };
+		3AD10A002C7E17090061C97B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3AD10A022C7E170A0061C97B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AD10A052C7E170A0061C97B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3AD322E32B32505B00110574 /* dl-network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-network"; sourceTree = "<group>"; };
 		3AD322E42B32505B00110574 /* dl-services */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-services"; sourceTree = "<group>"; };
 		3ADBF36B2BE4450C0026785E /* dl-utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "dl-utils"; sourceTree = "<group>"; };
@@ -139,6 +153,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3AD109F92C7E17080061C97B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A3FC5BC2C7E5FD3001E0BAF /* DLPersistence in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E26A1A829325E9800391181 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,21 +172,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF696242B33ADA60060862E /* ScreenTransferGroupEditing in Frameworks */,
 				3A3099C22BC8971B00CF7D34 /* ILModels in Frameworks */,
+				3A2F86802C32B44600197759 /* ILDebug in Frameworks */,
+				3ACA38AA2C826343007BF14E /* ILComponentsTCA in Frameworks */,
 				3AF6961A2B33ADA60060862E /* ScreenLogin in Frameworks */,
 				3AA7E0882B45960400846BE4 /* MultitoolKitFormatters in Frameworks */,
 				3AF696282B33ADA60060862E /* ScreenUserGroupCreation in Frameworks */,
+				3A956A1F2C7E8D1200264316 /* ScreenSettings in Frameworks */,
 				3AF6961E2B33ADA60060862E /* ScreenRegistration in Frameworks */,
-				3A8D34F22B3255B6001B6744 /* DesignSystem in Frameworks */,
 				3AF696182B33ADA60060862E /* ScreenContactList in Frameworks */,
 				3AD18FA22BC89B79007CC0C5 /* ILLocalization in Frameworks */,
+				3A2259CA2C277DCF00C1C999 /* ScreenExpenseEditing in Frameworks */,
 				3AC8760B2BE448F000BCD347 /* ILUtils in Frameworks */,
-				3AF696222B33ADA60060862E /* ScreenTransferEditing in Frameworks */,
 				3AF696162B33ADA60060862E /* ScreenAddContacts in Frameworks */,
-				3AC876092BE448EB00BCD347 /* DLUtils in Frameworks */,
 				3A88AF2F2B8D37C000C3B722 /* DLNetwork in Frameworks */,
-				3AE4473F2B33334700D45A1B /* Debug in Frameworks */,
 				3AF696202B33ADA60060862E /* ScreenSummary in Frameworks */,
 				3A8D34EF2B3251E2001B6744 /* ComposableArchitecture in Frameworks */,
 				3AF6962C2B33ADA60060862E /* ScreenUserGroupEditing in Frameworks */,
@@ -172,14 +193,14 @@
 				3AF696322B33ADA60060862E /* ScreenUserGroupUserAdding in Frameworks */,
 				3AF6962E2B33ADA60060862E /* ScreenUserGroupInfo in Frameworks */,
 				3AF6962A2B33ADA60060862E /* ScreenUserGroupDetails in Frameworks */,
-				3AF696262B33ADA60060862E /* ScreenTransferList in Frameworks */,
 				3A3099C82BC899FF00CF7D34 /* ILLogic in Frameworks */,
-				3A9A68F72B4757BF006561A6 /* ScreenUserDetails in Frameworks */,
+				3A2259CC2C277DCF00C1C999 /* ScreenExpenseGroupEditing in Frameworks */,
+				3A2F86822C32B4B700197759 /* ILDesignSystem in Frameworks */,
 				3AF696302B33ADA60060862E /* ScreenUserGroupList in Frameworks */,
 				3A3099CA2BC89A6A00CF7D34 /* ILFormatters in Frameworks */,
-				3AF6961C2B33ADA60060862E /* ScreenProfile in Frameworks */,
 				3A88AF2D2B8D37C000C3B722 /* DLModels in Frameworks */,
 				3A88AF312B8D37C000C3B722 /* DLServices in Frameworks */,
+				3A61AEEB2C7838BC00DD38B5 /* ScreenUserProfile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +213,7 @@
 				3A004F432BC76436008BEDEE /* dl-logic */,
 				3A1815322B8D258C0066606F /* dl-models */,
 				3AD322E32B32505B00110574 /* dl-network */,
+				3A3FC5B62C7E5F97001E0BAF /* dl-persistence */,
 				3AD322E42B32505B00110574 /* dl-services */,
 				3ADBF36B2BE4450C0026785E /* dl-utils */,
 			);
@@ -203,7 +225,9 @@
 			children = (
 				3A9EDA9A2BC79916007DE302 /* Screens */,
 				3A95B3522BC799CD00F99EE8 /* il-components */,
+				3A4DED0E2C322AC4009FCFD5 /* il-components-tca */,
 				3A95B34A2BC799CC00F99EE8 /* il-debug */,
+				3A7A1D992C3154CD00BA871B /* il-debug-tca */,
 				3A95B34E2BC799CC00F99EE8 /* il-design-system */,
 				3A95B34C2BC799CC00F99EE8 /* il-formatters */,
 				3A95B3502BC799CD00F99EE8 /* il-localization */,
@@ -211,6 +235,7 @@
 				3A95B34B2BC799CC00F99EE8 /* il-models */,
 				3A80A9D22BE457BF0057C032 /* il-preview */,
 				3A38AA1A2BE4466F00C3C367 /* il-utils */,
+				3A7A1D982C3153FE00BA871B /* il-utils-tca */,
 			);
 			path = ILPackages;
 			sourceTree = "<group>";
@@ -220,20 +245,19 @@
 			children = (
 				3A9EDAA02BC79916007DE302 /* screen-add-contacts */,
 				3A9EDA9D2BC79916007DE302 /* screen-contact-list */,
+				3A1B22342C277C07007FA5E6 /* screen-expense-editing */,
+				3A1B22322C277C07007FA5E6 /* screen-expense-group-editing */,
 				3A9EDA9E2BC79916007DE302 /* screen-login */,
-				3A9EDA9C2BC79916007DE302 /* screen-profile */,
 				3A9EDAA92BC79916007DE302 /* screen-registration */,
+				3A956A1C2C7E8C2600264316 /* screen-settings */,
 				3A9EDAA12BC79916007DE302 /* screen-summary */,
-				3A9EDAA72BC79916007DE302 /* screen-transfer-editing */,
-				3A9EDAA32BC79916007DE302 /* screen-transfer-group-editing */,
-				3A9EDAA52BC79916007DE302 /* screen-transfer-list */,
-				3A9EDAA42BC79916007DE302 /* screen-user-details */,
 				3A9EDA9B2BC79916007DE302 /* screen-user-group-creation */,
 				3A9EDAA22BC79916007DE302 /* screen-user-group-details */,
 				3A9EDAA62BC79916007DE302 /* screen-user-group-editing */,
 				3A9EDAA82BC79916007DE302 /* screen-user-group-info */,
 				3A9EDAAA2BC79916007DE302 /* screen-user-group-list */,
 				3A9EDA9F2BC79916007DE302 /* screen-user-group-user-adding */,
+				3AA8CE8D2C78339800CDD2FF /* screen-user-profile */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -246,6 +270,25 @@
 			name = Localizable;
 			path = "Packages/ILPackages/il-localization/Sources/ILLocalization/Localizable";
 			sourceTree = SOURCE_ROOT;
+		};
+		3AD109FD2C7E17080061C97B /* ScoofinLab */ = {
+			isa = PBXGroup;
+			children = (
+				3AD109FE2C7E17080061C97B /* ScoofinLabApp.swift */,
+				3AD10A002C7E17090061C97B /* ContentView.swift */,
+				3AD10A022C7E170A0061C97B /* Assets.xcassets */,
+				3AD10A042C7E170A0061C97B /* Preview Content */,
+			);
+			path = ScoofinLab;
+			sourceTree = "<group>";
+		};
+		3AD10A042C7E170A0061C97B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3AD10A052C7E170A0061C97B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
 		};
 		3ADD24662B320E7800487237 /* Packages */ = {
 			isa = PBXGroup;
@@ -268,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				9E36C0AD28E1A83700B8B5DC /* Scoofin */,
+				3AD109FD2C7E17080061C97B /* ScoofinLab */,
 				9E26A1AC29325E9800391181 /* ScoofinTestground */,
 				3ADD24662B320E7800487237 /* Packages */,
 				9E36C0AC28E1A83700B8B5DC /* Products */,
@@ -280,6 +324,7 @@
 			children = (
 				9E36C0AB28E1A83700B8B5DC /* scoofin-app.app */,
 				9E26A1AB29325E9800391181 /* ScoofinTestground */,
+				3AD109FC2C7E17080061C97B /* ScoofinLab.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -313,6 +358,7 @@
 		9E36C0C428E2510600B8B5DC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A3FC5B82C7E5FC1001E0BAF /* db.xcdatamodeld */,
 				3ACBAB492BE0F9DC0011C728 /* Localizable */,
 				9E36C0B228E1A83800B8B5DC /* Assets.xcassets */,
 				9E870B8C2932D95000763582 /* Info.plist */,
@@ -368,6 +414,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3AD109FB2C7E17080061C97B /* ScoofinLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AD10A072C7E170A0061C97B /* Build configuration list for PBXNativeTarget "ScoofinLab" */;
+			buildPhases = (
+				3AD109F82C7E17080061C97B /* Sources */,
+				3AD109F92C7E17080061C97B /* Frameworks */,
+				3AD109FA2C7E17080061C97B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScoofinLab;
+			packageProductDependencies = (
+				3A3FC5BB2C7E5FD3001E0BAF /* DLPersistence */,
+			);
+			productName = ScoofinLab;
+			productReference = 3AD109FC2C7E17080061C97B /* ScoofinLab.app */;
+			productType = "com.apple.product-type.application";
+		};
 		9E26A1AA29325E9800391181 /* ScoofinTestground */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E26A1AF29325E9800391181 /* Build configuration list for PBXNativeTarget "ScoofinTestground" */;
@@ -402,17 +468,11 @@
 			name = Scoofin;
 			packageProductDependencies = (
 				3A8D34EE2B3251E2001B6744 /* ComposableArchitecture */,
-				3A8D34F12B3255B6001B6744 /* DesignSystem */,
-				3AE4473E2B33334700D45A1B /* Debug */,
 				3AF696152B33ADA60060862E /* ScreenAddContacts */,
 				3AF696172B33ADA60060862E /* ScreenContactList */,
 				3AF696192B33ADA60060862E /* ScreenLogin */,
-				3AF6961B2B33ADA60060862E /* ScreenProfile */,
 				3AF6961D2B33ADA60060862E /* ScreenRegistration */,
 				3AF6961F2B33ADA60060862E /* ScreenSummary */,
-				3AF696212B33ADA60060862E /* ScreenTransferEditing */,
-				3AF696232B33ADA60060862E /* ScreenTransferGroupEditing */,
-				3AF696252B33ADA60060862E /* ScreenTransferList */,
 				3AF696272B33ADA60060862E /* ScreenUserGroupCreation */,
 				3AF696292B33ADA60060862E /* ScreenUserGroupDetails */,
 				3AF6962B2B33ADA60060862E /* ScreenUserGroupEditing */,
@@ -420,7 +480,6 @@
 				3AF6962F2B33ADA60060862E /* ScreenUserGroupList */,
 				3AF696312B33ADA60060862E /* ScreenUserGroupUserAdding */,
 				3AA7E0872B45960400846BE4 /* MultitoolKitFormatters */,
-				3A9A68F62B4757BF006561A6 /* ScreenUserDetails */,
 				3A88AF2C2B8D37C000C3B722 /* DLModels */,
 				3A88AF2E2B8D37C000C3B722 /* DLNetwork */,
 				3A88AF302B8D37C000C3B722 /* DLServices */,
@@ -429,8 +488,14 @@
 				3A3099C72BC899FF00CF7D34 /* ILLogic */,
 				3A3099C92BC89A6A00CF7D34 /* ILFormatters */,
 				3AD18FA12BC89B79007CC0C5 /* ILLocalization */,
-				3AC876082BE448EB00BCD347 /* DLUtils */,
 				3AC8760A2BE448F000BCD347 /* ILUtils */,
+				3A2259C92C277DCF00C1C999 /* ScreenExpenseEditing */,
+				3A2259CB2C277DCF00C1C999 /* ScreenExpenseGroupEditing */,
+				3A2F867F2C32B44600197759 /* ILDebug */,
+				3A2F86812C32B4B700197759 /* ILDesignSystem */,
+				3A61AEEA2C7838BC00DD38B5 /* ScreenUserProfile */,
+				3A956A1E2C7E8D1200264316 /* ScreenSettings */,
+				3ACA38A92C826343007BF14E /* ILComponentsTCA */,
 			);
 			productName = Splitter;
 			productReference = 9E36C0AB28E1A83700B8B5DC /* scoofin-app.app */;
@@ -446,6 +511,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					3AD109FB2C7E17080061C97B = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					9E26A1AA29325E9800391181 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -473,46 +541,56 @@
 			projectRoot = "";
 			targets = (
 				9E36C0AA28E1A83700B8B5DC /* Scoofin */,
+				3AD109FB2C7E17080061C97B /* ScoofinLab */,
 				9E26A1AA29325E9800391181 /* ScoofinTestground */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3AD109FA2C7E17080061C97B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AD10A062C7E170A0061C97B /* Preview Assets.xcassets in Resources */,
+				3AD10A032C7E170A0061C97B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E36C0A928E1A83700B8B5DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3A9EDACF2BC79917007DE302 /* screen-add-contacts in Resources */,
 				3A9EDAD02BC79917007DE302 /* screen-summary in Resources */,
-				3A9EDAD22BC79917007DE302 /* screen-transfer-group-editing in Resources */,
-				3A9EDAD62BC79917007DE302 /* screen-transfer-editing in Resources */,
 				3A95B3582BC799CD00F99EE8 /* il-logic in Resources */,
+				3AA8CE8E2C78339900CDD2FF /* screen-user-profile in Resources */,
 				3A1815332B8D258D0066606F /* dl-models in Resources */,
 				3A95B3552BC799CD00F99EE8 /* il-formatters in Resources */,
 				3A95B3532BC799CD00F99EE8 /* il-debug in Resources */,
 				3A9EDAD52BC79917007DE302 /* screen-user-group-editing in Resources */,
 				3ACBAB4D2BE0F9DC0011C728 /* Localizable.strings in Resources */,
-				3A9EDAD42BC79917007DE302 /* screen-transfer-list in Resources */,
 				3A95B3592BC799CD00F99EE8 /* il-localization in Resources */,
-				3A9EDAD32BC79917007DE302 /* screen-user-details in Resources */,
 				3A80A9D32BE457BF0057C032 /* il-preview in Resources */,
 				3AD322E72B32505B00110574 /* dl-services in Resources */,
 				3A9EDACE2BC79917007DE302 /* screen-user-group-user-adding in Resources */,
+				3A956A1D2C7E8C2700264316 /* screen-settings in Resources */,
 				3A95B3542BC799CD00F99EE8 /* il-models in Resources */,
 				3A9EDACC2BC79917007DE302 /* screen-contact-list in Resources */,
 				3A9EDAD82BC79917007DE302 /* screen-registration in Resources */,
+				3A3FC5B72C7E5F97001E0BAF /* dl-persistence in Resources */,
 				3A9EDAD12BC79917007DE302 /* screen-user-group-details in Resources */,
-				3A9EDACB2BC79917007DE302 /* screen-profile in Resources */,
 				3A9EDACA2BC79917007DE302 /* screen-user-group-creation in Resources */,
 				3A95B35B2BC799CD00F99EE8 /* il-components in Resources */,
 				3A9EDAD72BC79917007DE302 /* screen-user-group-info in Resources */,
+				3A1B22372C277C07007FA5E6 /* screen-expense-editing in Resources */,
 				9E36C0B628E1A83800B8B5DC /* Preview Assets.xcassets in Resources */,
 				3AD322E62B32505B00110574 /* dl-network in Resources */,
 				3A38AA1B2BE4467000C3C367 /* il-utils in Resources */,
 				3A9EDACD2BC79917007DE302 /* screen-login in Resources */,
 				3A9EDAD92BC79917007DE302 /* screen-user-group-list in Resources */,
 				3A95B3572BC799CD00F99EE8 /* il-design-system in Resources */,
+				3A1B22352C277C07007FA5E6 /* screen-expense-group-editing in Resources */,
 				9E36C0B328E1A83800B8B5DC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,6 +639,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3AD109F82C7E17080061C97B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AD10A012C7E17090061C97B /* ContentView.swift in Sources */,
+				3AD109FF2C7E17080061C97B /* ScoofinLabApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E26A1A729325E9800391181 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -578,6 +665,7 @@
 				9EDE872229FAD05D00E88BB2 /* Root.swift in Sources */,
 				9EDE872E29FAD1CF00E88BB2 /* Main.swift in Sources */,
 				9E36C0AF28E1A83700B8B5DC /* ScoofinApp.swift in Sources */,
+				3A3FC5BA2C7E5FC1001E0BAF /* db.xcdatamodeld in Sources */,
 				9EDE873029FAD20A00E88BB2 /* Main.Reducer.swift in Sources */,
 				9E36C0DF28E262B100B8B5DC /* Main.Screen.swift in Sources */,
 			);
@@ -598,6 +686,77 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3AD10A082C7E170A0061C97B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScoofinLab/Preview Content\"";
+				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AO.ScoofinLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3AD10A092C7E170A0061C97B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScoofinLab/Preview Content\"";
+				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AO.ScoofinLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		9E26A1B029325E9800391181 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -762,17 +921,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 22;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "\"Scoofin/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 3HY2N64MXA;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 3HY2N64MXA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scoofin/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Scoofin;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Expense location selection.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -788,7 +945,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.scoofin.scoofin-app";
 				PRODUCT_NAME = "scoofin-app";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.scoofin.scoofin-app";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_ENABLE_BARE_SLASH_REGEX = YES;
 				SWIFT_VERSION = 5.0;
@@ -804,15 +960,15 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 32;
 				DEVELOPMENT_ASSET_PATHS = "\"Scoofin/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 3HY2N64MXA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scoofin/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Scoofin;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Expense location selection.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -839,6 +995,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3AD10A072C7E170A0061C97B /* Build configuration list for PBXNativeTarget "ScoofinLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AD10A082C7E170A0061C97B /* Debug */,
+				3AD10A092C7E170A0061C97B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9E26A1AF29325E9800391181 /* Build configuration list for PBXNativeTarget "ScoofinTestground" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -882,12 +1047,28 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
 				kind = exactVersion;
-				version = 1.8.0;
+				version = 1.14.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3A2259C92C277DCF00C1C999 /* ScreenExpenseEditing */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenExpenseEditing;
+		};
+		3A2259CB2C277DCF00C1C999 /* ScreenExpenseGroupEditing */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenExpenseGroupEditing;
+		};
+		3A2F867F2C32B44600197759 /* ILDebug */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ILDebug;
+		};
+		3A2F86812C32B4B700197759 /* ILDesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ILDesignSystem;
+		};
 		3A3099C12BC8971B00CF7D34 /* ILModels */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ILModels;
@@ -903,6 +1084,14 @@
 		3A3099C92BC89A6A00CF7D34 /* ILFormatters */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ILFormatters;
+		};
+		3A3FC5BB2C7E5FD3001E0BAF /* DLPersistence */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DLPersistence;
+		};
+		3A61AEEA2C7838BC00DD38B5 /* ScreenUserProfile */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenUserProfile;
 		};
 		3A88AF2C2B8D37C000C3B722 /* DLModels */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -921,34 +1110,26 @@
 			package = 9ED572FF2A9FB08C007B5D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
-		3A8D34F12B3255B6001B6744 /* DesignSystem */ = {
+		3A956A1E2C7E8D1200264316 /* ScreenSettings */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = DesignSystem;
-		};
-		3A9A68F62B4757BF006561A6 /* ScreenUserDetails */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ScreenUserDetails;
+			productName = ScreenSettings;
 		};
 		3AA7E0872B45960400846BE4 /* MultitoolKitFormatters */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3AA7E0862B45960400846BE4 /* XCRemoteSwiftPackageReference "multitool-kit" */;
 			productName = MultitoolKitFormatters;
 		};
-		3AC876082BE448EB00BCD347 /* DLUtils */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DLUtils;
-		};
 		3AC8760A2BE448F000BCD347 /* ILUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ILUtils;
 		};
+		3ACA38A92C826343007BF14E /* ILComponentsTCA */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ILComponentsTCA;
+		};
 		3AD18FA12BC89B79007CC0C5 /* ILLocalization */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ILLocalization;
-		};
-		3AE4473E2B33334700D45A1B /* Debug */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Debug;
 		};
 		3AF696152B33ADA60060862E /* ScreenAddContacts */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -962,10 +1143,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = ScreenLogin;
 		};
-		3AF6961B2B33ADA60060862E /* ScreenProfile */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ScreenProfile;
-		};
 		3AF6961D2B33ADA60060862E /* ScreenRegistration */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ScreenRegistration;
@@ -973,18 +1150,6 @@
 		3AF6961F2B33ADA60060862E /* ScreenSummary */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ScreenSummary;
-		};
-		3AF696212B33ADA60060862E /* ScreenTransferEditing */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ScreenTransferEditing;
-		};
-		3AF696232B33ADA60060862E /* ScreenTransferGroupEditing */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ScreenTransferGroupEditing;
-		};
-		3AF696252B33ADA60060862E /* ScreenTransferList */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ScreenTransferList;
 		};
 		3AF696272B33ADA60060862E /* ScreenUserGroupCreation */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1011,6 +1176,20 @@
 			productName = ScreenUserGroupUserAdding;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		3A3FC5B82C7E5FC1001E0BAF /* db.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A3FC5B92C7E5FC1001E0BAF /* db.xcdatamodel */,
+			);
+			currentVersion = 3A3FC5B92C7E5FC1001E0BAF /* db.xcdatamodel */;
+			name = db.xcdatamodeld;
+			path = "../../Packages/DLPackages/dl-persistence/Sources/DLPersistence/Resources/db.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9E36C0A328E1A83700B8B5DC /* Project object */;
 }

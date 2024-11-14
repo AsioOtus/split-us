@@ -13,18 +13,26 @@ public extension ModellableResponseRequest {
 public extension NetworkController {
 	func send <RQ: ModellableResponseRequest> (
 		_ request: RQ,
-		encoding: ((RQ.Body) throws -> Data)? = nil,
-		decoding: ((Data) throws -> StandardResponse<Envelope<RQ.ResponseModel>>.Model)? = nil,
-		configurationUpdate: URLRequestConfiguration.Update = { $0 },
-		interception: @escaping URLRequestInterception = { $0 }
+		delegate: some NetworkControllerSendingDelegate<RQ, Envelope<RQ.ResponseModel>>,
+		configurationUpdate: RequestConfiguration.Update? = nil
 	) async throws -> StandardResponse<Envelope<RQ.ResponseModel>> {
 		try await send(
 			request,
 			response: StandardResponse<Envelope<RQ.ResponseModel>>.self,
-			encoding: encoding,
-			decoding: decoding,
-			configurationUpdate: configurationUpdate,
-			interception: interception
+			delegate: delegate,
+			configurationUpdate: configurationUpdate
+		)
+	}
+
+	func send <RQ: ModellableResponseRequest> (
+		_ request: RQ,
+		configurationUpdate: RequestConfiguration.Update? = nil
+	) async throws -> StandardResponse<Envelope<RQ.ResponseModel>> {
+		try await send(
+			request,
+			response: StandardResponse<Envelope<RQ.ResponseModel>>.self,
+			delegate: .standard(),
+			configurationUpdate: configurationUpdate
 		)
 	}
 }

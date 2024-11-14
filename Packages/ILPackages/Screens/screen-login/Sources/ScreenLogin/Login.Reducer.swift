@@ -1,8 +1,9 @@
 import ComposableArchitecture
-import Debug
+import ILDebug
 import DLServices
 import DLModels
-import DLUtils
+import ILDebugTCA
+import Multitool
 
 extension Login {
 	@Reducer
@@ -25,8 +26,8 @@ extension Login {
 					
 				case .onLoginButtonPressed: return onLoginButtonPressed(&state)
 				case .onLoginRequestLoaded(.successful((_, let user))): onLoginRequestSuccessful(user)
-				case .onLoginRequestLoaded(.failed(let error)): onLoginFailed(error: error, &state)
-					
+				case .onLoginRequestLoaded(.failed(let error, _)): onLoginFailed(error: error, &state)
+
 				default:
 					break
 				}
@@ -34,7 +35,7 @@ extension Login {
 				return .none
 			}
 			
-			Scope(state: \.debugConfiguration, action: /Action.debugConfiguration) {
+			Scope(state: \.debugConfiguration, action: \.debugConfiguration) {
 				Debug.Configuration.Reducer()
 			}
 		}
@@ -53,7 +54,7 @@ private extension Login.Reducer {
 	}
 	
 	func onLoginFailed (error: Error, _ state: inout State) {
-		state.loginRequest = .failed(error)
+		state.loginRequest = .failed(error: error)
 	}
 }
 

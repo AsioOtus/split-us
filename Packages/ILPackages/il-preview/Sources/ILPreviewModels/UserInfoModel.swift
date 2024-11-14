@@ -1,13 +1,14 @@
 import ILModels
 
-public extension UserInfoModel {
+public extension UserScreenModel {
 	static let ostap = Self(
 		id: .init(),
 		name: "Ostap",
 		surname: "Bender",
 		username: "ostap1",
 		image: .init(systemName: "person.fill"),
-		initials: "OB"
+		initials: "OB",
+		color: .white
 	)
 
 	static let alexander = Self(
@@ -16,7 +17,8 @@ public extension UserInfoModel {
 		surname: nil,
 		username: "alexander",
 		image: .init(systemName: "person.fill"),
-		initials: "A"
+		initials: "A",
+		color: .white
 	)
 
 	static let daniel = Self(
@@ -25,7 +27,8 @@ public extension UserInfoModel {
 		surname: nil,
 		username: "daniel",
 		image: .init(systemName: "person.fill"),
-		initials: "D"
+		initials: "D",
+		color: .white
 	)
 
 	static let ignat = Self(
@@ -34,7 +37,8 @@ public extension UserInfoModel {
 		surname: nil,
 		username: "ignat",
 		image: .init(systemName: "person.fill"),
-		initials: "I"
+		initials: "I",
+		color: .white
 	)
 
 	static let valdis = Self(
@@ -43,7 +47,8 @@ public extension UserInfoModel {
 		surname: nil,
 		username: "valdis",
 		image: .init(systemName: "person.fill"),
-		initials: "V"
+		initials: "V",
+		color: .white
 	)
 
 	static let withoutImage = Self(
@@ -52,7 +57,8 @@ public extension UserInfoModel {
 		surname: "Bender",
 		username: "ostap2",
 		image: nil,
-		initials: "OB"
+		initials: "OB",
+		color: .white
 	)
 	
 	static let withoutName = Self(
@@ -61,7 +67,8 @@ public extension UserInfoModel {
 		surname: "Bender",
 		username: "ostap3",
 		image: nil,
-		initials: "OB"
+		initials: "OB",
+		color: .white
 	)
 	
 	static let withoutSurname = Self(
@@ -70,7 +77,8 @@ public extension UserInfoModel {
 		surname: nil,
 		username: "ostap4",
 		image: nil,
-		initials: "OB"
+		initials: "OB",
+		color: .white
 	)
 	
 	static let withoutNameSurname = Self(
@@ -79,11 +87,16 @@ public extension UserInfoModel {
 		surname: nil,
 		username: "ostap5",
 		image: nil,
-		initials: "OB"
+		initials: "OB",
+		color: .white
 	)
 	
 	static let all: [Self] = [
-		.standard,
+		.ostap,
+		.alexander,
+		.daniel,
+		.ignat,
+		.valdis,
 		.withoutImage,
 		.withoutName,
 		.withoutSurname,

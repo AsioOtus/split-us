@@ -1,13 +1,13 @@
 import ComposableArchitecture
-import Debug
+import DLModels
+import DLServices
 import Foundation
 import struct IdentifiedCollections.Identified
-import DLServices
-import DLModels
-import DLUtils
+import Multitool
 
 extension Summary {
 	public struct Reducer {
+		@Dependency(\.currentUserService) var currentUserService
 		@Dependency(\.userGroupsService) var userGroupsService
 		
 		public init () { }
@@ -25,7 +25,7 @@ extension Summary.Reducer: ComposableArchitecture.Reducer {
 				return refresh(state.userGroup.id)
 				
 			case .onSummaryLoaded(let userSummariesResult):
-				state.userSummaries = userSummariesResult.tryMapValue { try map($0, state) }
+				state.userSummaries = userSummariesResult.catchingMapValue { try map($0, state) }
 
 			case .userSummaries:
 				break
@@ -45,10 +45,13 @@ private extension Summary.Reducer {
 	}
 	
 	func map (_ userSummaries: [UserSummary], _ state: State) throws -> State.UserSummaries {
-		guard let currentUserSummary = userSummaries.first(where: { $0.user.id == state.currentUser.id })
-		else { throw Debug.Error.default }
+		let currentUserSummary = userSummaries.first(where: { $0.user.id == currentUserService.user.value?.id })
 
-		let otherUsersSummaries = userSummaries.filter { $0.user.id != currentUserSummary.user.id }
+		let otherUsersSummaries = if let currentUserSummary {
+			userSummaries.filter { $0.user.id != currentUserSummary.user.id }
+		} else {
+			userSummaries
+		}
 		
 		return .init(
 			currentUserSummary: currentUserSummary,

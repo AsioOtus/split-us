@@ -1,25 +1,22 @@
-import AmountComponents
+import ComponentsTCAUser
 import ComposableArchitecture
-import Foundation
 import DLModels
-import UserComponents
-import DLUtils
+import Foundation
+import ILComponents
+import Multitool
 
 public enum Summary { }
 
 extension Summary {
 	@ObservableState
 	public struct State: Equatable {
-		public let currentUser: User
 		public let userGroup: UserGroup
 		
-		public var userSummaries: Loadable<UserSummaries> = .initial()
+		public var userSummaries: Loadable<UserSummaries> = .initial
 		
 		public init (
-			currentUser: User,
 			userGroup: UserGroup
 		) {
-			self.currentUser = currentUser
 			self.userGroup = userGroup
 		}
 	}
@@ -28,10 +25,10 @@ extension Summary {
 extension Summary.State {
 	@ObservableState
 	public struct UserSummaries: Equatable {
-		public let currentUserSummary: UserSummary
+		public let currentUserSummary: UserSummary?
 		public let otherUsersSummaries: [UserSummary]
 
-		public var summaries: AmountComponents.UserSummaries.Reducer.State {
+		public var summaries: ComponentsTCAUser.UserSummaries.Reducer.State {
 			.init(summaries: otherUsersSummaries)
 		}
 	}

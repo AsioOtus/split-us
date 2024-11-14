@@ -14,20 +14,12 @@ let package = Package(
 			targets: [
 				"ILUtils",
 			]
-		)
+		),
 	],
 	dependencies: [
 		.package(
-			path: "../dl-utils"
-		),
-
-		.package(
 			url: "https://github.com/AsioOtus/multitool",
 			from: "1.0.0"
-		),
-		.package(
-			url: "https://github.com/pointfreeco/swift-composable-architecture",
-			exact: "1.8.0"
 		),
 	],
 	targets: [
@@ -35,17 +27,8 @@ let package = Package(
 			name: "ILUtils",
 			dependencies: [
 				.product(
-					name: "DLUtils",
-					package: "dl-utils"
-				),
-
-				.product(
 					name: "Multitool",
 					package: "multitool"
-				),
-				.product(
-					name: "ComposableArchitecture",
-					package: "swift-composable-architecture"
 				),
 			]
 		),

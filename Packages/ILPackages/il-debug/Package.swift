@@ -10,32 +10,31 @@ let package = Package(
 	],
 	products: [
 		.library(
-			name: "Debug",
+			name: "ILDebug",
 			targets: [
-				"Debug"
+				"ILDebug"
 			]
 		)
 	],
 	dependencies: [
 		.package(path: "../../DLPackages/dl-network"),
 		.package(path: "../../DLPackages/dl-services"),
-		.package(path: "../../DLPackages/dl-utils"),
+		.package(path: "../../DLPackages/dl-models"),
 		.package(path: "../il-formatters"),
 		.package(path: "../il-logic"),
-		.package(url: "https://github.com/AsioOtus/network-util", from: "1.0.0"),
-		.package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.1.0"),
+		.package(url: "https://github.com/AsioOtus/network-util", from: "2.0.0"),
 	],
 	targets: [
 		.target(
-			name: "Debug",
+			name: "ILDebug",
 			dependencies: [
 				.product(name: "DLNetwork", package: "dl-network"),
 				.product(name: "DLServices", package: "dl-services"),
+				.product(name: "DLModels", package: "dl-models"),
+				.product(name: "DLModelsSamples", package: "dl-models"),
 				.product(name: "NetworkUtil", package: "network-util"),
-				.product(name: "DLUtils", package: "dl-utils"),
 				.product(name: "ILFormatters", package: "il-formatters"),
 				.product(name: "ILLogic", package: "il-logic"),
-				.product(name: "Dependencies", package: "swift-dependencies"),
 			]
 		)
 	]

@@ -1,8 +1,7 @@
 import ComposableArchitecture
 import DLModels
-import DLUtils
 import ScreenContactList
-import ScreenProfile
+import ScreenSettings
 import ScreenUserGroupList
 
 extension Main {
@@ -20,8 +19,8 @@ extension Main {
 				ContactsList.Reducer()
 			}
 			
-			Scope(state: \.profile, action: \.profile) {
-				Profile.Reducer()
+			Scope(state: \.settings, action: \.settings) {
+				Settings.Reducer()
 			}
 		}
 	}

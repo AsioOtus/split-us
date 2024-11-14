@@ -6,7 +6,7 @@ extension User {
 		public let username: String
 		public let name: String?
 		public let surname: String?
-		
+
 		public init (
 			id: UUID,
 			username: String,

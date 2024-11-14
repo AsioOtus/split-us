@@ -1,9 +1,9 @@
 import ComposableArchitecture
-import Multitool
+import ComponentsTCAUser
 import DLServices
 import DLModels
-import UserComponents
-import DLUtils
+import ILUtilsTCA
+import Multitool
 
 // MARK: - Body
 extension UserGroupUsersAdding {
@@ -46,11 +46,8 @@ extension UserGroupUsersAdding {
 				return .none
 			}
 
-			Scope(state: \.contactsSelection, action: \.contactsSelection) {
-				EmptyReducer()
-					.ifCaseLet(\.successful, action: \.self) {
-						UserEjectSelection.Reducer()
-					}
+			Scope(state: \.contactsSelection[case: \.successful], action: \.contactsSelection) {
+				UserEjectSelection.Reducer()
 			}
 		}
 	}
@@ -109,7 +106,7 @@ private extension UserGroupUsersAdding.Reducer {
 		state.contactsSelection.setLoading()
 		
 		return .run { send in
-			let contacts = await Loadable { try await usersService.contacts() }
+			let contacts = await Loadable { try await usersService.contacts(page: .init(number: 0, size: 100)) }
 			await send(.onContactsLoaded(contacts))
 		}
 	}

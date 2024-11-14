@@ -7,8 +7,12 @@ extension Requests {
 		public typealias Body = DeauthenticateRequestModel
 		public typealias ResponseModel = SharedResponseModels.Success
 		
-		public var method: HTTPMethod { .post }
-		public var path: String { "auth/deauthenticate" }
+		public var configuration: RequestConfiguration {
+			.init()
+			.setMethod(.post)
+			.setPath("auth/deauthenticate")
+		}
+		
 		public var body: Body?
 		
 		public init (_ body: Body) {

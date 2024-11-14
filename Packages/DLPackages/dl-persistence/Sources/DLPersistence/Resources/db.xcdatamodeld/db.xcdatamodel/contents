@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B92" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CacheableEntity" representedClassName="DLPersistence.CacheableEntity" syncable="YES">
+        <attribute name="cacheTimestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="CurrentUserEntity" representedClassName="DLPersistence.CurrentUserEntity" parentEntity="CacheableEntity" syncable="YES">
+        <attribute name="acronym" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="surname" optional="YES" attributeType="String"/>
+        <attribute name="username" attributeType="String"/>
+    </entity>
+    <entity name="ExpenseBorrowerEntity" representedClassName="DLPersistence.ExpenseBorrowerEntity" parentEntity="CacheableEntity" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isCompleted" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="borrower" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="borrowings" inverseEntity="UserEntity"/>
+        <relationship name="expense" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExpenseEntity" inverseName="borrowers" inverseEntity="ExpenseEntity"/>
+    </entity>
+    <entity name="ExpenseEntity" representedClassName="DLPersistence.ExpenseEntity" parentEntity="CacheableEntity" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="coordinate" optional="YES" attributeType="String" valueTransformerName=""/>
+        <attribute name="currencyCode" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isGroup" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="offlineStatus" attributeType="String"/>
+        <attribute name="updateTimestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="borrowers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ExpenseBorrowerEntity" inverseName="expense" inverseEntity="ExpenseBorrowerEntity"/>
+        <relationship name="creator" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="createdExpenses" inverseEntity="UserEntity"/>
+        <relationship name="creditor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="creditedExpenses" inverseEntity="UserEntity"/>
+        <relationship name="subExpenses" toMany="YES" deletionRule="Cascade" destinationEntity="ExpenseEntity" inverseName="superExpenseGroup" inverseEntity="ExpenseEntity"/>
+        <relationship name="superExpenseGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExpenseEntity" inverseName="subExpenses" inverseEntity="ExpenseEntity"/>
+        <relationship name="userGroup" maxCount="1" deletionRule="Nullify" destinationEntity="UserGroupEntity" inverseName="expenses" inverseEntity="UserGroupEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="UserEntity" representedClassName="DLPersistence.UserEntity" parentEntity="CacheableEntity" syncable="YES">
+        <attribute name="acronym" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isContact" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="surname" optional="YES" attributeType="String"/>
+        <attribute name="username" attributeType="String"/>
+        <relationship name="borrowings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpenseBorrowerEntity" inverseName="borrower" inverseEntity="ExpenseBorrowerEntity"/>
+        <relationship name="createdExpenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpenseEntity" inverseName="creator" inverseEntity="ExpenseEntity"/>
+        <relationship name="creditedExpenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpenseEntity" inverseName="creditor" inverseEntity="ExpenseEntity"/>
+        <relationship name="userGroupMemberships" toMany="YES" deletionRule="Nullify" destinationEntity="UserGroupMemberEntity" inverseName="user" inverseEntity="UserGroupMemberEntity"/>
+    </entity>
+    <entity name="UserGroupEntity" representedClassName="DLPersistence.UserGroupEntity" parentEntity="CacheableEntity" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpenseEntity" inverseName="userGroup" inverseEntity="ExpenseEntity"/>
+        <relationship name="members" toMany="YES" deletionRule="Nullify" destinationEntity="UserGroupMemberEntity" inverseName="userGroup" inverseEntity="UserGroupMemberEntity"/>
+    </entity>
+    <entity name="UserGroupMemberEntity" representedClassName="DLPersistence.UserGroupMemberEntity" syncable="YES">
+        <attribute name="role" attributeType="String"/>
+        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="userGroupMemberships" inverseEntity="UserEntity"/>
+        <relationship name="userGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserGroupEntity" inverseName="members" inverseEntity="UserGroupEntity"/>
+    </entity>
+</model>

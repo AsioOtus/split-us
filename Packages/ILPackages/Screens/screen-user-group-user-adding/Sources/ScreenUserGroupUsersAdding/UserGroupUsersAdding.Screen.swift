@@ -1,10 +1,8 @@
-import ButtonComponents
+import ComponentsTCAUser
 import ComposableArchitecture
-import DLUtils
-import ILUtils
+import ILComponents
+import ILUtilsTCA
 import SwiftUI
-import UnavailablePlaceholderComponents
-import UserComponents
 
 // MARK: - Screen
 extension UserGroupUsersAdding {
@@ -58,9 +56,14 @@ private extension UserGroupUsersAdding.Screen {
 			.controlSize(.small)
 	}
 
-	func failedView (_: Error? = nil) -> some View {
-		StandardRetryErrorView {
-			store.send(.refresh)
+	@ViewBuilder
+	func failedView (_ error: Error? = nil) -> some View {
+		if let error {
+			StandardErrorView(error: error) {
+				RetryButton {
+					store.send(.refresh)
+				}
+			}
 		}
 	}
 }

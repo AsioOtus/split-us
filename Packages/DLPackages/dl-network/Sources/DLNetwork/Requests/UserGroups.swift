@@ -5,7 +5,10 @@ extension Requests {
 	public struct UserGroups: ModellableResponseRequest {
 		public typealias ResponseModel = UserGroupsResponseModel
 		
-		public let path: String = "userGroup"
+		public var configuration: RequestConfiguration {
+			.init()
+			.setPath("userGroup")
+		}
 		
 		public init () { }
 	}

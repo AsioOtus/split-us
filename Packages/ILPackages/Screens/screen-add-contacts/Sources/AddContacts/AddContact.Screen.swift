@@ -1,19 +1,18 @@
-import ButtonComponents
+import ComponentsTCAUser
 import ComposableArchitecture
-import DLUtils
+import DLModels
+import ILComponents
 import ILModels
 import ILModelsMappers
-import ILComponentsViewModifiers
 import ILUtils
-import DLModels
 import SwiftUI
-import UnavailablePlaceholderComponents
-import UserComponents
 
 extension AddContacts {
 	public struct Screen: View {
+		@SwiftUI.State private var isSearchFieldPresented = true
+
 		@Bindable var store: StoreOf<Reducer>
-		let userInfoModelMapper = UserInfoModel.Mapper.default
+		let userScreenModelMapper = UserScreenModel.Mapper.default
 		
 		public init (store: StoreOf<Reducer>) {
 			self.store = store
@@ -28,10 +27,17 @@ extension AddContacts {
 					.toolbar {
 						closeToolbarItem()
 					}
-					.submitLabel(.done)
-					.onSubmit {
+					.searchable(
+						text: $store.username,
+						isPresented: $isSearchFieldPresented,
+						placement: .navigationBarDrawer(displayMode: .always)
+					)
+					.autocapitalization(.none)
+					.submitLabel(.search)
+					.onSubmit(of: .search) {
 						store.send(.onSearchButtonTap)
 					}
+					.scrollDismissesKeyboard(.immediately)
 					.task {
 						store.send(.initialize)
 					}
@@ -44,30 +50,11 @@ private extension AddContacts.Screen {
 	@MainActor
 	func contentView () -> some View {
 		Form {
-			Section {
-				usernameField()
-				searchButton()
-			}
-			
-			Section {
-				searchResultView()
-			}
+			searchResultView()
 		}
 	}
 	
-	@MainActor
-	func usernameField () -> some View {
-		TextField(.generalUsername, text: $store.username)
-			.usernameField()
-	}
-	
-	func searchButton () -> some View {
-		LoadableButton(label: .generalActionSearch, loadable: store.searchResult) {
-			store.send(.onSearchButtonTap)
-		}
-		.frame(maxWidth: .infinity, alignment: .center)
-	}
-	
+	@ViewBuilder
 	func searchResultView () -> some View {
 		LoadableOptionalView(
 			value: store.searchResult,
@@ -83,40 +70,43 @@ private extension AddContacts.Screen {
 			noneView: {
 				loadedNoneView()
 			},
-			failedView: { _ in
-				errorView()
+			failedView: { error in
+				errorView(error)
 			}
 		)
 	}
-	
-	func loadedSomeView (_ result: User.ContactSearch) -> some View {
-		HStack {
-			UserDetailedView(user: userInfoModelMapper.map(result.user))
-				.controlSize(.regular)
-			
-			Spacer()
-			
-			AddRemoveContactButton(
-				isContact: result.isContact,
-				processingState: store.addRemoveRequest,
-				addAction: {
-					store.send(.onAddContactsButtonTap(userId: result.user.id))
-				},
-				removeAction: {
-					store.send(.onRemoveContactButtonTap(userId: result.user.id))
-				}
+
+	@ViewBuilder
+	func loadedSomeView (_ contact: User.Contact) -> some View {
+		Section {
+			UserDetailedView(user: userScreenModelMapper.map(contact.user))
+				.avatarSize(.large)
+		}
+
+		Section {
+			AddRemoveContactButton.Screen(
+				store: .init(
+					initialState: .init(
+						userId: contact.user.id,
+						isContact: contact.isContact
+					),
+					reducer: {
+						AddRemoveContactButton.Reducer()
+					}
+				)
 			)
+			.frame(maxWidth: .infinity)
 		}
 	}
-	
+
 	func loadedNoneView () -> some View {
 		StandardEmptyView(message: .generalNothingFound, systemImage: "magnifyingglass")
 	}
 	
-	func errorView () -> some View {
-		StandardErrorView()
+	func errorView (_ error: Error) -> some View {
+		StandardErrorView(error: error)
 	}
-	
+
 	func closeToolbarItem () -> some ToolbarContent {
 		ToolbarItem(placement: .topBarLeading) {
 			Button(.generalActionClose) {

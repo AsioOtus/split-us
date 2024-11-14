@@ -1,8 +1,8 @@
 import ComposableArchitecture
-import Multitool
-import Foundation
 import DLModels
-import DLUtils
+import Foundation
+import ILComponents
+import Multitool
 
 public enum AddContacts { }
 
@@ -11,14 +11,14 @@ extension AddContacts {
 	public struct State: Equatable {
 		var username = ""
 
-		var searchResult = Loadable<User.ContactSearch?>.initial()
-		var addRemoveRequest = Loadable<None>.initial()
+		var searchResult = Loadable<User.Contact?>.initial
 
 		public init () { }
 	}
 }
 
 extension AddContacts {
+	@CasePathable
 	public enum Action: BindableAction {
 		case binding(BindingAction<State>)
 
@@ -27,11 +27,7 @@ extension AddContacts {
 
 		case onSearchButtonTap
 		case onCancelButtonTap
-		case onAddContactsButtonTap(userId: UUID)
-		case onRemoveContactButtonTap(userId: UUID)
 
-		case onSearchResultLoaded(Loadable<User.ContactSearch?>)
-		case onContactAddingCompleted(Loadable<None>)
-		case onContactRemovingCompleted(Loadable<None>)
+		case onSearchResultLoaded(Loadable<User.Contact?>)
 	}
 }

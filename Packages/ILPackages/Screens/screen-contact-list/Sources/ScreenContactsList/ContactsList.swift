@@ -1,20 +1,20 @@
 import ComposableArchitecture
-import Foundation
-import ScreenAddContacts
-import ScreenUserDetails
 import DLModels
-import DLUtils
+import Foundation
+import Multitool
+import ScreenAddContacts
+import ScreenUserProfile
 
 public enum ContactsList { }
 
 extension ContactsList {
 	@ObservableState
 	public struct State: Equatable {
-		var contacts: Loadable<[User.Compact]> = .initial()
+		var contacts: Loadable<[User.Compact]> = .initial
 		var removeRequests: [Int] = []
 
 		@Presents var addContact: AddContacts.State?
-		@Presents var contactDetails: UserDetails.State?
+		@Presents var contactDetails: UserProfile.State?
 
 		public init () { }
 	}
@@ -26,14 +26,15 @@ extension ContactsList {
 		case initialize
 		case refresh
 
-		case onAddContactScreenButtonTap
-
 		case onContactsLoaded(Loadable<[User.Compact]>)
+
+		case onContactTap(userId: UUID)
+		case onAddContactScreenButtonTap
 
 		case onRemoveContactButtonTap(userId: UUID)
 		case onContactRemovingCompleted(userId: UUID)
 
 		case addContact(PresentationAction<AddContacts.Action>)
-		case contactDetails(PresentationAction<UserDetails.Action>)
+		case contactDetails(PresentationAction<UserProfile.Action>)
 	}
 }

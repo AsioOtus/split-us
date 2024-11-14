@@ -13,7 +13,9 @@
 "general.action.retry" = "Retry";
 "general.action.refresh" = "Refresh";
 "general.action.select" = "Select";
-"general.short.somethingWentWrong" = "Error";
+"general.action.clear" = "Clear";
+"general.error.somethingWentWrong" = "Something went wrong";
+"general.error.short.somethingWentWrong" = "Error";
 "general.date" = "Date";
 "general.done" = "Done";
 "general.search" = "Search";
@@ -24,17 +26,36 @@
 "general.email" = "Email";
 "general.name" = "Name";
 "general.username" = "Username";
-"general.somethingWentWrong" = "Something went wrong";
 "general.nothingFound" = "Nothing found";
 "general.users" = "Users";
+"general.information" = "Information";
+"general.editing" = "Editing";
+"general.back" = "Back";
+"general.notSelected" = "Not selected";
+"general.list" = "List";
 
 "domain.creditor" = "Creditor";
 "domain.borrower" = "Borrower";
 "domain.sum" = "Sum";
 "domain.notes" = "Notes";
 "domain.contacts" = "Contacts";
-"domain.transfer" = "Transfer";
-"domain.transferGroup" = "Transfer group";
+"domain.expense" = "Expense";
+"domain.expenses" = "Expenses";
+"domain.expenseGroup" = "Expense group";
+"domain.expenseGroups" = "Expense groups";
+"domain.summary" = "Summary";
+"domain.withoutName" = "Without name";
+"domain.new.expense" = "New expense";
+"domain.new.expenseGroup" = "New expense group";
+"domain.short.expense" = "Expense";
+"domain.short.expenseGroup" = "Group";
+"domain.error.noInternet" = "Server is unavailable";
+"domain.error.checkInternetConnection" = "Please, check your internet connection";
+
+"components.user.undistributed" = "Undistributed";
+"components.addRemoveContactButton.addContact" = "Add contact";
+"components.addRemoveContactButton.removeContact" = "Remove contact";
+"components.connectionStateFeature.serverIsUnavailable" = "Server is unavailable";
 
 "login.forgetPassword" = "Forget password?";
 
@@ -60,39 +81,51 @@
 "userGroups.groups" = "Groups";
 "userGroups.tab.name" = "Groups";
 "userGroups.empty.message" = "No groups";
+"userGroups.action.pin" = "Pin";
+"userGroups.action.unpin" = "Unpin";
 
 "userGroupCreation.title" = "New user group";
 "userGroupCreation.userGroupName.warning.empty" = "Name cannot be empty";
 
-"userGroupDetails.transfers.tab.name" = "Transfer";
+"userGroupDetails.expenses.tab.name" = "Expense";
 
 "userGroupInfo.users.empty.message" = "No users";
 "userGroupInfo.addUsers.button.text" = "Add users";
 
-"transferList.tab.name" = "Transfers";
+"expenseList.tab.name" = "Expenses";
 
-"transfers.title" = "Transfers";
-"transfers.empty.message" = "No transfers";
+"expenses.title" = "Expenses";
+"expenses.empty.message" = "No expenses";
 
-"transferGroup.addTransfer" = "Add transfer";
-"transferGroup.addTransferGroup" = "Add transfer group";
+"expenseGroup.addExpense" = "Add expense";
+"expenseGroup.addExpenseGroup" = "Add expense group";
 
-"transferGroupEditing.sharedInfo.title" = "Common info";
-"transferGroupEditing.sharedInfo.enable.button.text" = "Add common info";
-"transferGroupEditing.sharedInfo.disable.button.text" = "Disable";
-"transferGroupEditing.sharedInfo.remainder.label" = "Remains to be distributed";
+"expenseGroupEditing.title" = "New group";
+"expenseGroupEditing.offlineCreated.description" = "Expense group saved on the device";
+"expenseGroupEditing.sharedInfo.title" = "Common info";
+"expenseGroupEditing.sharedInfo.enable.button.text" = "Add common info";
+"expenseGroupEditing.sharedInfo.disable.button.text" = "Disable";
+"expenseGroupEditing.sharedInfo.remainder.label" = "Remains to be distributed";
+"expenseGroupEditing.toast.error.creationError" = "Saving error";
+"expenseGroupEditing.toast.error.updateError" = "Saving error";
+"expenseGroupEditing.toast.error.offlineUpdateAttempt" = "Offline update impossible";
+"expenseGroupEditing.toast.info.offlineCreated" = "Saved on the device";
 
-"transferInfoEditingView.transferName" = "Transfer name";
-"transferInfoEditingView.transferNotes" = "Transfer notes";
+"expenseInfoEditingView.expenseName" = "Expense name";
+"expenseInfoEditingView.expenseNotes" = "Expense notes";
 
-"newTransfer.info" = "Info";
-"newTransfer.participant" = "Participant";
-"newTransfer.participants" = "Participants";
+"newExpense.info" = "Info";
+"newExpense.participant" = "Participant";
+"newExpense.participants" = "Participants";
 
 "amountSplit.align" = "Align";
 
-"profile.tab.name" = "Profile";
-"profile.title" = "Profile";
+"settings.tab.name" = "Settings";
+"settings.title" = "Settings";
+"settings.clearSavedData" = "Clear saved data";
+"settings.clearSavedData.confirmationDialog.title" = "Clear all saved data?";
+"settings.clearSavedData.confirmationDialog.description" = "All saved data will be deleted.";
+"settings.clearSavedData.confirmationDialog.confirmationTitle" = "Clear data";
 
 "contacts.title" = "Contacts";
 "contacts.link.name" = "Contacts";
@@ -103,6 +136,8 @@
 "userEjectSelection.selectedSection.header" = "Selected";
 "userEjectSelection.allSection.header" = "Users";
 
-"userSelectionPicker.notSelected" = "Not selected";
+"singleSelector.notSelected" = "Not selected";
+
+"userSingleSelector.selectUser" = "Select user";
 
 "summary.subtitle" = "Summary";

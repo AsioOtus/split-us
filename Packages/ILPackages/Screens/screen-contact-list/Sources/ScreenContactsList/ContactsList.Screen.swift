@@ -1,25 +1,23 @@
-import ButtonComponents
+import ComponentsTCAUser
 import ComposableArchitecture
+import DLModels
 import DLServices
-import DLUtils
+import ILComponents
 import ILModels
 import ILUtils
 import ScreenAddContacts
-import ScreenUserDetails
-import DLModels
+import ScreenUserProfile
 import SwiftUI
-import UnavailablePlaceholderComponents
-import UserComponents
 
 extension ContactsList {
 	public struct Screen: View {
 		@Bindable var store: StoreOf<Reducer>
-		let userInfoModelMapper = UserInfoModel.Mapper.default
-		
+		let userScreenModelMapper = UserScreenModel.Mapper.default
+
 		public init (store: StoreOf<Reducer>) {
 			self.store = store
 		}
-		
+
 		public var body: some View {
 			NavigationStack {
 				contentView()
@@ -33,10 +31,15 @@ extension ContactsList {
 					.refreshable {
 						await store.send(.refresh).finish()
 					}
+					.sheet(
+						item: $store.scope(state: \.addContact, action: \.addContact)
+					) { store in
+						AddContacts.Screen(store: store)
+					}
 					.navigationDestination(
 						item: $store.scope(state: \.contactDetails, action: \.contactDetails)
 					) { store in
-						UserDetails.Screen(store: store)
+						UserProfile.Screen(store: store)
 					}
 			}
 		}
@@ -52,30 +55,31 @@ private extension ContactsList.Screen {
 			successfulView: successfulView,
 			failedView: failedView
 		)
+		.listStyle(.inset)
 	}
-	
+
 	func loadingView () -> some View {
 		StandardLoadingView()
 	}
-	
+
 	func emptyView () -> some View {
 		StandardEmptyView(message: .contactsEmptyMessage, systemImage: "person.3")
 	}
-	
+
 	func successfulView (_ contacts: [User.Compact]) -> some View {
 		ForEach(contacts, id: \.id) { contact in
-			NavigationLink(state: UserDetails.State(userId: contact.id)) {
-				contactView(contact)
+			contactView(contact)
+		}
+	}
+
+	func failedView (_ error: Error) -> some View {
+		StandardErrorView(error: error) {
+			RetryButton {
+				store.send(.refresh)
 			}
 		}
 	}
-	
-	func failedView (_ error: Error) -> some View {
-		StandardRetryErrorView {
-			store.send(.refresh)
-		}
-	}
-	
+
 	func addContactToolbarItem () -> some ToolbarContent {
 		ToolbarItem(placement: .navigationBarTrailing) {
 			Button {
@@ -90,15 +94,25 @@ private extension ContactsList.Screen {
 // MARK: - Subviews
 private extension ContactsList.Screen {
 	func contactView (_ contact: User.Compact) -> some View {
-		UserDetailedView(user: userInfoModelMapper.map(contact))
-			.controlSize(.regular)
-			.swipeActions(edge: .leading) {
-				AddRemoveContactButton(
-					isContact: true,
-					processingState: .initial(),
-					addAction: { },
-					removeAction: { store.send(.onRemoveContactButtonTap(userId: contact.id)) }
+		Button {
+			store.send(.onContactTap(userId: contact.id))
+		} label: {
+			UserDetailedView(user: userScreenModelMapper.map(contact))
+				.contentShape(.rect)
+		}
+		.buttonStyle(.plain)
+		.swipeActions(edge: .leading) {
+			AddRemoveContactButton.Screen(
+				store: .init(
+					initialState: .init(
+						userId: contact.id,
+						isContact: true
+					),
+					reducer: {
+						AddRemoveContactButton.Reducer()
+					}
 				)
-			}
+			)
+		}
 	}
 }

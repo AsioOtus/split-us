@@ -2,19 +2,19 @@ import Dependencies
 import Foundation
 import DLNetwork
 import DLModels
+import DLModelsSamples
 import Combine
 
 public protocol PUserGroupsService {
 	func create (name: String, users: [User.Compact]) async throws
 	func userGroups () async throws -> [UserGroup]
-	func transfers (userGroupId: UUID) async throws -> [TransferUnit]
-	func users (userGroupId: UUID) async throws -> [User.Compact]
 	func summary (userGroupId: UUID) async throws -> [UserSummary]
 	func addUsersToUserGroup (userIds: [UUID], userGroupId: UUID) async throws
 }
 
 public struct UserGroupsService: PUserGroupsService {
 	@Dependency(\.authenticatedNetworkController) var networkController
+	@Dependency(\.userGroupLocalService) var userGroupLocalService
 }
 
 public extension UserGroupsService {
@@ -34,34 +34,29 @@ public extension UserGroupsService {
 	}
 	
 	func userGroups () async throws -> [UserGroup] {
-		try await networkController
+		let userGroups = try await networkController
 			.send(Requests.UserGroups())
 			.unfold()
 			.userGroups
 			.map {
-				.init(id: $0.id, name: $0.name)
+				UserGroup(
+					id: $0.id,
+					name: $0.name,
+					defaultCurrency: .init(id: .create(1), code: "eur")
+				)
 			}
-	}
-	
-	func transfers (userGroupId: UUID) async throws -> [TransferUnit] {
-		try await networkController
-			.send(Requests.UserGroupTransfers(userGroupId: userGroupId))
-			.unfold()
-			.transferUnits
-	}
-	
-	func users (userGroupId: UUID) async throws -> [User.Compact] {
-		try await networkController
-			.send(Requests.UserGroupUsers(body: .init(userGroupId: userGroupId)))
-			.unfold()
-			.users
+
+		try? userGroupLocalService.saveUserGroups(userGroups)
+
+		return userGroups
 	}
 	
 	func summary (userGroupId: UUID) async throws -> [UserSummary] {
-		try await networkController
-			.send(Requests.UserGroupSummary(body: .init(userGroupId: userGroupId)))
-			.unfold()
-			.userSummaries
+		UserSummary.all
+//		try await networkController
+//			.send(Requests.UserGroupSummary(body: .init(userGroupId: userGroupId)))
+//			.unfold()
+//			.userSummaries
 	}
 	
 	func addUsersToUserGroup (userIds: [UUID], userGroupId: UUID) async throws {

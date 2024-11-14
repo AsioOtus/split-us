@@ -1,12 +1,13 @@
+import ComponentsTCAGeneral
 import ComposableArchitecture
+import DLModels
 import DLServices
-import DLUtils
+import ILComponents
 import ILUtils
+import ILUtilsTCA
 import ScreenUserGroupCreation
 import ScreenUserGroupDetails
-import DLModels
 import SwiftUI
-import UnavailablePlaceholderComponents
 
 extension UserGroups {
 	public struct Screen: View {
@@ -19,12 +20,11 @@ extension UserGroups {
 		public var body: some View {
 			NavigationStack {
 				contentView()
+					.task { store.send(.initialize) }
+					.refreshable { await store.send(.refresh).finish() }
 					.navigationTitle(.userGroupsGroups)
 					.toolbar {
 						createUserGroupToolbarItem()
-					}
-					.refreshable {
-						await store.send(.refresh).finish()
 					}
 					.sheet(item: $store.scope(state: \.creation, action: \.creation)) { store in
 						UserGroupCreation.Screen(store: store)
@@ -34,9 +34,6 @@ extension UserGroups {
 					) { store in
 						UserGroupDetails.Screen(store: store)
 					}
-					.task {
-						store.send(.initialize)
-					}
 			}
 		}
 	}
@@ -44,39 +41,28 @@ extension UserGroups {
 
 private extension UserGroups.Screen {
 	func contentView () -> some View {
-		LoadableList(
-			collection: store.userGroups,
-			loadingView: loadingView,
-			emptyView: emptyView,
-			successfulView: { successfulView($0, store.currentUser) },
-			failedView: failedView
-		)
-		.listStyle(.plain)
-	}
+		List {
+			Section {
+				ConnectionStateFeature.RegularScreen(
+					store: store.scope(
+						state: \.userGroups.connectionState,
+						action: \.userGroups.connectionState
+					)
+				)
+			}
 
-	func loadingView () -> some View {
-		StandardLoadingView()
-	}
-
-	func emptyView () -> some View {
-		StandardEmptyView(
-			message: .userGroupsEmptyMessage,
-			systemImage: "person.2.crop.square.stack"
-		)
-	}
-
-	func successfulView (_ userGroups: [UserGroup], _ currentUser: User) -> some View {
-		ForEach(userGroups, id: \.id) { userGroup in
-			Button(userGroup.name) {
-				store.send(.onUserGroupSelected(userGroup))
+			Section {
+				PageLoading<UserGroup>.Screen(
+					store: store.scope(
+						state: \.userGroups,
+						action: \.userGroups
+					)
+				) { userGroupPageItem in
+					UserGroupView(userGroup: userGroupPageItem.item, store: store)
+				}
 			}
 		}
-	}
-
-	func failedView (_ error: Error? = nil) -> some View {
-		StandardRetryErrorView {
-			store.send(.refresh)
-		}
+		.listStyle(.plain)
 	}
 }
 

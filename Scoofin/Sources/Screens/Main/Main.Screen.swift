@@ -1,7 +1,7 @@
 import ComposableArchitecture
 import Multitool
 import ScreenContactList
-import ScreenProfile
+import ScreenSettings
 import ScreenUserGroupList
 import SwiftUI
 
@@ -27,11 +27,11 @@ extension Main {
 						)
 					}
 
-				Profile.Screen(store: store.scope(state: \.profile, action: \.profile))
+				Settings.Screen(store: store.scope(state: \.settings, action: \.settings))
 					.tabItem {
 						Label(
-							.profileTabName,
-							systemImage: "person.circle"
+							.settingsTabName,
+							systemImage: "slider.horizontal.3"
 						)
 					}
 			}

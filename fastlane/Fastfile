@@ -4,15 +4,15 @@ default_platform(:ios)
 
 lane :testflight_deploy do
   skip_docs
-
+  setup_ci
   update_code_signing_settings(use_automatic_signing: false)
 
   app_store_connect_api_key
-  setup_ci
+
+  update_build_number
   match
-  handle_version
   gym
   pilot
 
-  restore_automatic_code_signing
+  add_version_git_tag
 end

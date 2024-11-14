@@ -12,6 +12,7 @@ disabled_rules:
   - statement_position
   - switch_case_alignment
   - todo
+  - function_parameter_count
 
 opt_in_rules:
   - indentation_width

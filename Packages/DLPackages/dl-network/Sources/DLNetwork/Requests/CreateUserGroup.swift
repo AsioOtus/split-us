@@ -7,8 +7,12 @@ extension Requests {
 		public typealias Body = CreateUserGroupRequestModel
 		public typealias ResponseModel = SharedResponseModels.Success
 		
-		public var method: HTTPMethod { .post }
-		public var path: String { "userGroup/create" }
+		public var configuration: RequestConfiguration {
+			.init()
+			.setMethod(.post)
+			.setPath("userGroup/create")
+		}
+		
 		public var body: Body?
 		
 		public init (body: Body) {

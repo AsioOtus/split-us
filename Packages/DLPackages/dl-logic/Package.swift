@@ -17,24 +17,15 @@ let package = Package(
 		)
 	],
 	dependencies: [
-		.package(
-			path: "../../DLPackages/dl-models"
-		),
-		.package(
-			path: "../dl-utils"
-		),
-		.package(
-			url: "https://github.com/apple/swift-async-algorithms",
-			from: "1.0.0"
-		),
+		.package(path: "../../DLPackages/dl-models"),
+		.package(path: "../dl-utils"),
 	],
 	targets: [
 		.target(
 			name: "DLLogic",
 			dependencies: [
 				.product(name: "DLModels", package: "dl-models"),
-				.product(name: "DLUtils", package: "dl-utils"),
-				.product(name: "AsyncAlgorithms", package: "swift-async-algorithms"),
+				.product(name: "SwiftUtils", package: "dl-utils"),
 			]
 		),
 	]

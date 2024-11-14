@@ -19,7 +19,7 @@ let package = Package(
 	dependencies: [
 		.package(path: "../../../DLPackages/dl-services"),
 		.package(path: "../../il-components"),
-		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "1.8.0"),
+		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "1.14.0"),
 	],
 	targets: [
 		.target(

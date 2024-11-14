@@ -7,8 +7,12 @@ extension Requests {
 		public typealias Body = RegistrationRequestModel
 		public typealias ResponseModel = RegistrationResponseModel
 
-		public var method: HTTPMethod { .post }
-		public var path: String { "auth/register" }
+		public var configuration: RequestConfiguration {
+			.init()
+			.setMethod(.post)
+			.setPath("auth/register")
+		}
+
 		public var body: Body?
 
 		public init (_ body: Body) {

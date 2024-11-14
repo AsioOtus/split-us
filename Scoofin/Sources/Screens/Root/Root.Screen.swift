@@ -1,9 +1,8 @@
 import ComposableArchitecture
+import ILComponents
 import ScreenLogin
 import ScreenRegistration
 import SwiftUI
-import UnavailablePlaceholderComponents
-import DLUtils
 
 extension Root {
 	struct Screen: View {
@@ -33,7 +32,6 @@ extension Root {
 					}
 				}
 			}
-			.tint(.red)
 			.task {
 				store.send(.initialize)
 			}

@@ -1,8 +1,8 @@
+import ComponentsTCAUser
 import ComposableArchitecture
-import Multitool
 import DLModels
-import UserComponents
-import DLUtils
+import ILComponents
+import Multitool
 
 public enum UserGroupCreation { }
 
@@ -12,8 +12,8 @@ extension UserGroupCreation {
 		var userGroupName = ""
 		var isUserGroupNameValidationRequired = false
 		
-		var contactsSelection: Loadable<UserEjectSelection.State> = .initial()
-		var createUserGroupRequest: Loadable<None> = .initial()
+		var contactsSelection: Loadable<UserEjectSelection.State> = .initial
+		var createUserGroupRequest: Loadable<None> = .initial
 		
 		public init () { }
 	}

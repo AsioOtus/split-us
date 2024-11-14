@@ -16,17 +16,17 @@ let package = Package(
 	],
 	dependencies: [
 		.package(
-			path: "../dl-utils"
-		),
-		.package(
 			path: "../dl-models"
 		),
 		.package(
 			path: "../dl-network"
 		),
 		.package(
+			path: "../dl-persistence"
+		),
+		.package(
 			url: "https://github.com/pointfreeco/swift-dependencies",
-			exact: "1.1.0"
+			exact: "1.3.5"
 		),
 		.package(
 			url: "https://github.com/auth0/JWTDecode.swift.git",
@@ -36,22 +36,30 @@ let package = Package(
 			url: "https://github.com/auth0/SimpleKeychain",
 			exact: "1.1.0"
 		),
+		.package(
+			url: "https://github.com/apple/swift-async-algorithms",
+			from: "1.0.0"
+		),
 	],
 	targets: [
 		.target(
 			name: "DLServices",
 			dependencies: [
 				.product(
-					name: "DLUtils",
-					package: "dl-utils"
+					name: "DLModels",
+					package: "dl-models"
 				),
 				.product(
-					name: "DLModels",
+					name: "DLModelsSamples",
 					package: "dl-models"
 				),
 				.product(
 					name: "DLNetwork",
 					package: "dl-network"
+				),
+				.product(
+					name: "DLPersistence",
+					package: "dl-persistence"
 				),
 				.product(
 					name: "Dependencies",
@@ -64,6 +72,10 @@ let package = Package(
 				.product(
 					name: "SimpleKeychain",
 					package: "SimpleKeychain"
+				),
+				.product(
+					name: "AsyncAlgorithms",
+					package: "swift-async-algorithms"
 				),
 			]
 		),

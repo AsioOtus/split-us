@@ -1,7 +1,7 @@
 import ComposableArchitecture
-import HintListComponent
 import DLServices
-import DLUtils
+import ILComponents
+import Multitool
 
 extension Registration {
 	@ObservableState
@@ -12,7 +12,7 @@ extension Registration {
 		public var password = ""
 		public var passwordRepeat = ""
 		
-		public var registrationRequest: Loadable<Never> = .initial()
+		public var registrationRequest: Loadable<Never> = .initial
 		public var submitErrorTrigger = 1
 		
 		public var validation: Validation = .init()

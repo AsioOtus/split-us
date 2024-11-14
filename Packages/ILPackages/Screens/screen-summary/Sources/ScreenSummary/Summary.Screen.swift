@@ -1,9 +1,8 @@
-import AmountComponents
+import ComponentsTCAUser
 import ComposableArchitecture
-import DLUtils
-import ILUtils
+import ILComponents
+import ILUtilsTCA
 import SwiftUI
-import UserComponents
 
 extension Summary {
 	public struct Screen: View {
@@ -27,7 +26,11 @@ extension Summary {
 				await store.send(.refresh).finish()
 			}
 			.toolbar {
-				titleToolbarItem()
+				TitleSubtitleView(
+					title: LocalizedStringKey(store.userGroup.name),
+					subtitle: .summarySubtitle
+				)
+				.asToolbarItem(placement: .principal)
 			}
 		}
 	}
@@ -36,25 +39,14 @@ extension Summary {
 private extension Summary.Screen {
 	@ViewBuilder
 	func successfulView (_ store: Store<Summary.State.UserSummaries, Summary.Action>) -> some View {
-		Section {
-			UserSummaryView(userSummary: store.currentUserSummary)
+		if let currentUserSummary = store.currentUserSummary {
+			Section {
+				UserSummaryView(userSummary: currentUserSummary)
+			}
 		}
 
 		Section {
 			UserSummaries.Screen(store: store.scope(state: \.summaries, action: \.userSummaries))
-		}
-	}
-}
-
-// MARK: - Subviews
-private extension Summary.Screen {
-	func titleToolbarItem () -> some ToolbarContent {
-		ToolbarItem(placement: .principal) {
-			VStack {
-				Text(store.userGroup.name)
-				Text(.summarySubtitle)
-					.foregroundStyle(.secondary)
-			}
 		}
 	}
 }

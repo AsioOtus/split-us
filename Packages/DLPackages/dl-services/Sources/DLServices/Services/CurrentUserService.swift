@@ -1,21 +1,24 @@
+import Combine
 import Dependencies
 import Foundation
 import DLModels
 
 public protocol PCurrentUserService {
-	func get () -> User?
+	var user: CurrentValueSubject<User?, Never> { get }
+
 	func set (user: User)
+	func delete ()
 }
 
 public class CurrentUserService: PCurrentUserService {
-	private var user: User?
-	
-	public func get () -> User? {
-		user
-	}
-	
+	public private(set) var user: CurrentValueSubject<User?, Never> = .init(nil)
+
 	public func set (user: User) {
-		self.user = user
+		self.user.send(user)
+	}
+
+	public func delete () {
+		self.user.send(nil)
 	}
 }
 

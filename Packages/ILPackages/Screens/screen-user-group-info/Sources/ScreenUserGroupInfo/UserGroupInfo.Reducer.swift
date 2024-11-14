@@ -1,15 +1,17 @@
 import ComposableArchitecture
 import Foundation
+import DLModels
+import Multitool
 import ScreenUserGroupEditing
 import ScreenUserGroupUserAdding
-import DLModels
-import DLUtils
+import ScreenUserProfile
 
 // MARK: - Body
 extension UserGroupInfo {
 	public struct Reducer: ComposableArchitecture.Reducer {
 		@Dependency(\.userGroupsService) var userGroupsService
-		
+		@Dependency(\.usersService) var usersService
+
 		public init () { }
 		
 		public var body: some ComposableArchitecture.Reducer<State, Action> {
@@ -26,24 +28,28 @@ extension UserGroupInfo {
 					
 				case .onAddUsersButtonTap:
 					onAddUsersButtonTap(&state)
+
+				case .onUserTap(let userId):
+					onUserTap(userId, &state)
+
+				case .userGroupEditing: break
 					
-				case .userGroupEditing:
-					break
-					
-				case .userGroupUsersAdding(.dismiss):
-					return onUserGroupUsersAddingDismiss(&state)
-					
-				case .userGroupUsersAdding:
-					break
+				case .userGroupUsersAdding(.dismiss): return onUserGroupUsersAddingDismiss(&state)
+
+				case .userGroupUsersAdding: break
+				case .userProfile: break
 				}
 				
 				return .none
 			}
-			.ifLet(\.$userGroupEditing, action: /Action.userGroupEditing) {
+			.ifLet(\.$userGroupEditing, action: \.userGroupEditing) {
 				UserGroupEditing.Reducer()
 			}
-			.ifLet(\.$userGroupUsersAdding, action: /Action.userGroupUsersAdding) {
+			.ifLet(\.$userGroupUsersAdding, action: \.userGroupUsersAdding) {
 				UserGroupUsersAdding.Reducer()
+			}
+			.ifLet(\.$userProfile, action: \.userProfile) {
+				UserProfile.Reducer()
 			}
 		}
 	}
@@ -72,7 +78,11 @@ private extension UserGroupInfo.Reducer {
 		guard let userGroupId = state.userGroup.value?.id else { return }
 		state.userGroupUsersAdding = .init(userGroupId: userGroupId)
 	}
-	
+
+	func onUserTap (_ userId: UUID, _ state: inout State) {
+		state.userProfile = .init(userId: userId)
+	}
+
 	func onUserGroupUsersAddingDismiss (_ state: inout State) -> Effect<Action> {
 		guard let userGroupId = state.userGroup.value?.id else { return .none }
 		return loadUsers(userGroupId, &state)
@@ -85,7 +95,14 @@ private extension UserGroupInfo.Reducer {
 		state.users = state.users.loading()
 		
 		return .run { send in
-			let users = await Loadable { try await userGroupsService.users(userGroupId: userGroupId) }
+			let users = await Loadable {
+				try await usersService.userGroupMembers(
+					userGroupId: userGroupId,
+					page: .init(number: 0, size: 100)
+				)
+				.map(\.user)
+			}
+			
 			await send(.onUsersLoaded(users))
 		}
 	}

@@ -7,10 +7,10 @@ strings:
 
 xcassets:
   - inputs:
-      - ../../Packages/ILPackages/il-design-system/Sources/DesignResources/Colors.xcassets
+      - ../../Packages/ILPackages/il-design-system/Sources/ILDesignResources/Colors.xcassets
     outputs:
       templatePath: colors.stencil
-      output: ../../Packages/ILPackages/il-design-system/Sources/DesignResources/Colors.g.swift
+      output: ../../Packages/ILPackages/il-design-system/Sources/ILDesignResources/Colors.g.swift
   # - inputs:
   #     - Assets.xcassets
   #   outputs:

@@ -7,8 +7,12 @@ extension Requests {
 		public typealias Body = AuthenticateRequestModel
 		public typealias ResponseModel = AuthenticateResponseModel
 		
-		public var method: HTTPMethod { .post }
-		public var path: String { "auth/authenticate" }
+		public var configuration: RequestConfiguration {
+			.init()
+			.setMethod(.post)
+			.setPath("auth/authenticate")
+		}
+
 		public let body: Body?
 
 		public init (_ body: Body) {

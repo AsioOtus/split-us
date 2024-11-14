@@ -6,8 +6,12 @@ extension Requests {
 		public typealias Body = UserGroupUsersRequestModel
 		public typealias ResponseModel = UserGroupUsersResponseModel
 		
-		public let method = HTTPMethod.post
-		public let path = "userGroup/users"
+		public var configuration: RequestConfiguration {
+			.init()
+			.setMethod(.post)
+			.setPath("userGroup/users")
+		}
+
 		public let body: Body?
 		
 		public init (body: Body) {

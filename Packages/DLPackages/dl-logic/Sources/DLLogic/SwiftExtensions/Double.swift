@@ -1,4 +1,4 @@
-import DLUtils
+import SwiftUtils
 
 public extension Double {
 	var intExactValue: Int {

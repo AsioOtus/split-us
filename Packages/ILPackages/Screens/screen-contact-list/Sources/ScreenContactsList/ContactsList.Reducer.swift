@@ -1,9 +1,9 @@
 import ComposableArchitecture
-import Foundation
-import ScreenAddContacts
-import ScreenUserDetails
 import DLModels
-import DLUtils
+import Foundation
+import Multitool
+import ScreenAddContacts
+import ScreenUserProfile
 
 extension ContactsList {
 	@Reducer
@@ -12,7 +12,8 @@ extension ContactsList {
 		public typealias Action = ContactsList.Action
 		
 		@Dependency(\.usersService) var usersService
-		
+		@Dependency(\.userLocalService) var userLocalService
+
 		public init () { }
 		
 		public var body: some ReducerOf<Self> {
@@ -21,6 +22,7 @@ extension ContactsList {
 				case .initialize: return initialize(&state)
 				case .refresh: return refresh(&state)
 					
+				case .onContactTap(userId: let userId): onContactTap(userId, &state)
 				case .onAddContactScreenButtonTap: onAddContactButtonTap(&state)
 				case .onContactsLoaded(let contacts): onContactsLoaded(contacts, &state)
 				case .onRemoveContactButtonTap(userId: let userId): return onRemoveContactButtonTap(userId: userId, &state)
@@ -39,7 +41,7 @@ extension ContactsList {
 				AddContacts.Reducer()
 			}
 			.ifLet(\.$contactDetails, action: \.contactDetails) {
-				UserDetails.Reducer()
+				UserProfile.Reducer()
 			}
 		}
 	}
@@ -47,13 +49,18 @@ extension ContactsList {
 
 private extension ContactsList.Reducer {
 	func initialize (_ state: inout State) -> Effect<Action> {
-		loadContacts(&state)
+		loadLocalContacts(&state)
+		return loadContacts(&state)
 	}
 	
 	func refresh (_ state: inout State) -> Effect<Action> {
 		loadContacts(&state)
 	}
 	
+	func onContactTap (_ userId: UUID, _ state: inout State) {
+		state.contactDetails = .init(userId: userId)
+	}
+
 	func onAddContactButtonTap (_ state: inout State) {
 		state.addContact = .init()
 	}
@@ -83,12 +90,21 @@ private extension ContactsList.Reducer {
 }
 
 private extension ContactsList.Reducer {
+	func loadLocalContacts (_ state: inout State) {
+		guard
+			let users = try? userLocalService.contacts(page: .init(number: 0, size: 100)),
+			!users.isEmpty
+		else { return }
+
+		state.contacts = .successful(users)
+	}
+
 	func loadContacts (_ state: inout State) -> Effect<Action> {
-		state.contacts = state.contacts.loading()
+		state.contacts.setLoading()
 		
 		return .run { send in
 			let contacts = await Loadable.result {
-				try await usersService.contacts()
+				try await usersService.contacts(page: .init(number: 0, size: 100))
 			}
 			
 			await send(.onContactsLoaded(contacts))

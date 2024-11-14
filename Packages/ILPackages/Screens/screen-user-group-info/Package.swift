@@ -19,10 +19,11 @@ let package = Package(
 	dependencies: [
 		.package(path: "../screen-user-group-user-adding"),
 		.package(path: "../screen-user-group-editing"),
+		.package(path: "../screen-user-profile"),
 		.package(path: "../../il-debug"),
 		.package(path: "../../il-components"),
 		.package(path: "../../../DLPackages/dl-services"),
-		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "1.8.0"),
+		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "1.14.0"),
 	],
 	targets: [
 		.target(
@@ -30,7 +31,8 @@ let package = Package(
 			dependencies: [
 				.product(name: "ScreenUserGroupUserAdding", package: "screen-user-group-user-adding"),
 				.product(name: "ScreenUserGroupEditing", package: "screen-user-group-editing"),
-				.product(name: "Debug", package: "il-debug"),
+				.product(name: "ScreenUserProfile", package: "screen-user-profile"),
+				.product(name: "ILDebug", package: "il-debug"),
 				.product(name: "ILComponents", package: "il-components"),
 				.product(name: "DLServices", package: "dl-services"),
 				.product(name: "ComposableArchitecture", package: "swift-composable-architecture"),

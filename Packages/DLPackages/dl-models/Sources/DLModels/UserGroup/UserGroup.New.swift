@@ -5,7 +5,7 @@ extension UserGroup {
 		public let name: String
 		public let userIds: [UUID]
 		
-		public init(
+		public init (
 			name: String,
 			userIds: [UUID]
 		) {

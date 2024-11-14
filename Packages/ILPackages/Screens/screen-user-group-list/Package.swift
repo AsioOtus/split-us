@@ -24,13 +24,13 @@ let package = Package(
 		.package(path: "../../il-components"),
 		.package(path: "../../il-logic"),
 		.package(path: "../../../DLPackages/dl-services"),
-		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "1.8.0"),
+		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "1.14.0"),
 	],
 	targets: [
 		.target(
 			name: "ScreenUserGroupList",
 			dependencies: [
-				.product(name: "Debug", package: "il-debug"),
+				.product(name: "ILDebug", package: "il-debug"),
 				.product(name: "ScreenUserGroupDetails", package: "screen-user-group-details"),
 				.product(name: "ScreenUserGroupInfo", package: "screen-user-group-info"),
 				.product(name: "ScreenUserGroupCreation", package: "screen-user-group-creation"),

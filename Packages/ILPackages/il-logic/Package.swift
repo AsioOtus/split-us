@@ -13,12 +13,22 @@ let package = Package(
 			name: "ILLogic",
 			targets: [
 				"ILExtensions",
+				"ILLogic",
 			]
 		)
+	],
+	dependencies: [
+		.package(path: "../il-utils"),
 	],
 	targets: [
 		.target(
 			name: "ILExtensions"
+		),
+		.target(
+			name: "ILLogic",
+			dependencies: [
+				.product(name: "ILUtils", package: "il-utils"),
+			]
 		),
 	]
 )

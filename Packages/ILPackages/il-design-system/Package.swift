@@ -10,19 +10,19 @@ let package = Package(
 	],
 	products: [
 		.library(
-			name: "DesignSystem",
+			name: "ILDesignSystem",
 			targets: [
-				"DesignComponents",
-				"DesignResources",
+				"ILDesignComponents",
+				"ILDesignResources",
 			]
 		)
 	],
 	targets: [
 		.target(
-			name: "DesignComponents"
+			name: "ILDesignComponents"
 		),
 		.target(
-			name: "DesignResources"
+			name: "ILDesignResources"
 		),
 	]
 )

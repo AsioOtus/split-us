@@ -1,10 +1,8 @@
-import ButtonComponents
+import ComponentsTCAUser
 import ComposableArchitecture
-import DLUtils
-import ILUtils
+import ILComponents
+import ILUtilsTCA
 import SwiftUI
-import UnavailablePlaceholderComponents
-import UserComponents
 
 extension UserGroupCreation {
 	public struct Screen: View {
@@ -64,9 +62,9 @@ private extension UserGroupCreation.Screen {
 			.controlSize(.small)
 	}
 
-	func failedView (_: Error) -> some View {
+	func failedView (_ error: Error) -> some View {
 		Section {
-			StandardErrorView()
+			StandardErrorView(error: error)
 		}
 	}
 }

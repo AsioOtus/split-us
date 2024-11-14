@@ -1,10 +1,10 @@
+import ComponentsTCAUser
 import ComposableArchitecture
-import Multitool
 import Foundation
 import DLServices
 import DLModels
-import UserComponents
-import DLUtils
+import ILComponents
+import Multitool
 
 // MARK: - Feature
 public enum UserGroupUsersAdding { }
@@ -14,8 +14,8 @@ extension UserGroupUsersAdding {
 	@ObservableState
 	public struct State: Equatable {
 		var userGroupId: UUID
-		var contactsSelection: Loadable<UserEjectSelection.State> = .initial()
-		var usersAddingRequest: Loadable<None> = .initial()
+		var contactsSelection: Loadable<UserEjectSelection.State> = .initial
+		var usersAddingRequest: Loadable<None> = .initial
 		
 		public init (userGroupId: UUID) {
 			self.userGroupId = userGroupId

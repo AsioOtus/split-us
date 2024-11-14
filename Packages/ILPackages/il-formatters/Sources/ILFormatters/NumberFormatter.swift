@@ -12,6 +12,8 @@ public extension NumberFormatter {
 }
 
 public extension NumberFormatter {
+	static let emptyCurrencyPlaceholder = "-"
+
 	static let currency: NumberFormatter = {
 		let formatter = NumberFormatter()
 		formatter.numberStyle = .currency
@@ -29,8 +31,24 @@ public extension NumberFormatter {
 		string(from: value as NSNumber)
 	}
 
+	func format (_ value: Double) -> String {
+		format(value) ?? Self.emptyCurrencyPlaceholder
+	}
+
+	func format (_ value: Double?) -> String {
+		value.map(format) ?? Self.emptyCurrencyPlaceholder
+	}
+
 	func format (_ value: Int) -> String? {
 		string(from: value as NSNumber)
+	}
+
+	func format (_ value: Int) -> String {
+		format(value) ?? Self.emptyCurrencyPlaceholder
+	}
+
+	func format (_ value: Int?) -> String {
+		value.map(format) ?? Self.emptyCurrencyPlaceholder
 	}
 
 	func format (_ amount: Amount) -> String? {
@@ -42,7 +60,11 @@ public extension NumberFormatter {
 	}
 
 	func format (_ amount: Amount) -> String {
-		format(amount) ?? "--"
+		format(amount) ?? Self.emptyCurrencyPlaceholder
+	}
+
+	func format (_ amount: Amount?) -> String {
+		amount.map(format) ?? Self.emptyCurrencyPlaceholder
 	}
 }
 

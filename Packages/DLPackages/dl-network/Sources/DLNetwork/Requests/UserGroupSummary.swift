@@ -6,9 +6,12 @@ extension Requests {
 		public typealias Body = UserGroupSummaryRequestModel
 		public typealias ResponseModel = UserGroupSummaryResponseModel
 
-		public var method: HTTPMethod { .post }
-		public var path: String { "userGroup/summary" }
-		public var headers: [String: String] { ["Content-Type": "application/json; charset=utf-8"] }
+		public var configuration: RequestConfiguration {
+			.init()
+			.setMethod(.post)
+			.setPath("userGroup/summary")
+		}
+
 		public var body: Body?
 
 		public init (body: Body) {

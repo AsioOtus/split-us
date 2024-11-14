@@ -47,5 +47,6 @@ extension AnalyticsEvent {
 	public enum LoginMode: String {
 		case initial
 		case silent
+		case offline
 	}
 }

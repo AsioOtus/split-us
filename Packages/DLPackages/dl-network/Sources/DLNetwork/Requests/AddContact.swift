@@ -7,8 +7,12 @@ extension Requests {
 		public typealias Body = AddContactRequestModel
 		public typealias ResponseModel = SharedResponseModels.Success
 
-		public var method: HTTPMethod { .post }
-		public var path: String { "contacts/addContact" }
+		public var configuration: RequestConfiguration {
+			.init()
+			.setMethod(.post)
+			.setPath("contacts/addContact")
+		}
+
 		public var body: Body?
 
 		public init (_ body: Body) {

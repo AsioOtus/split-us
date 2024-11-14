@@ -1,10 +1,7 @@
 scheme ENV["SCO_SCHEME_NAME"]
 
 export_options(    
-	method: "app-store",    
-	provisioningProfiles: {
-		ENV["SCO_APP_ID"] => ENV["SCO_MATCH_PROVISIONING_PROFILE"],
-    }
+	method: "app-store"
 )
 
 output_directory "./fastlane/builds"

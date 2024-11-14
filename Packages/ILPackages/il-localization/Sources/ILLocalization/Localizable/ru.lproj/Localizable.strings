@@ -10,10 +10,12 @@
 "general.action.signOut" = "Выйти";
 "general.action.search" = "Искать";
 "general.action.close" = "Закрыть";
-"general.action.retry" = "Повторить";
+"general.action.retry" = "Обновить";
 "general.action.refresh" = "Обновить";
 "general.action.select" = "Выбрать";
-"general.short.somethingWentWrong" = "Ошибка";
+"general.action.clear" = "Очистить";
+"general.error.somethingWentWrong" = "Что-то пошло не так";
+"general.error.short.somethingWentWrong" = "Ошибка";
 "general.date" = "Дата";
 "general.done" = "Готово";
 "general.search" = "Поиск";
@@ -24,17 +26,36 @@
 "general.email" = "Электронная почта";
 "general.name" = "Имя";
 "general.username" = "Имя пользователя";
-"general.somethingWentWrong" = "Что-то пошло не так";
 "general.nothingFound" = "Ничего не найдено";
 "general.users" = "Пользователи";
+"general.information" = "Информация";
+"general.editing" = "Правка";
+"general.back" = "Назад";
+"general.notSelected" = "Не выбрано";
+"general.list" = "Список";
 
 "domain.creditor" = "Оплативший";
 "domain.borrower" = "Заемщик";
 "domain.sum" = "Сумма";
 "domain.notes" = "Заметки";
 "domain.contacts" = "Контакты";
-"domain.transfer" = "Перевод";
-"domain.transferGroup" = "Группа переводов";
+"domain.expense" = "Расход";
+"domain.expenses" = "Расходы";
+"domain.expenseGroup" = "Группа расходов";
+"domain.expenseGroups" = "Группы расходов";
+"domain.summary" = "Итоги";
+"domain.withoutName" = "Без имени";
+"domain.new.expense" = "Новый расход";
+"domain.new.expenseGroup" = "Новая группа расходов";
+"domain.short.expense" = "Расход";
+"domain.short.expenseGroup" = "Группа";
+"domain.error.noInternet" = "Сервер недоступен";
+"domain.error.checkInternetConnection" = "Пожалуйста, проверьте ваше интернет соединение";
+
+"components.user.undistributed" = "Не распределено";
+"components.addRemoveContactButton.addContact" = "Добавить в контакты";
+"components.addRemoveContactButton.removeContact" = "Удалить из контактов";
+"components.connectionStateFeature.serverIsUnavailable" = "Сервер недоступен";
 
 "login.forgetPassword" = "Забыли пароль?";
 
@@ -60,39 +81,51 @@
 "userGroups.groups" = "Группы";
 "userGroups.tab.name" = "Группы";
 "userGroups.empty.message" = "Групп нет";
+"userGroups.action.pin" = "Закрепить";
+"userGroups.action.unpin" = "Открепить";
 
 "userGroupCreation.title" = "Новая группа";
 "userGroupCreation.userGroupName.warning.empty" = "Название группы не может быть пустым";
 
-"userGroupDetails.transfers.tab.name" = "Переводы";
+"userGroupDetails.expenses.tab.name" = "Расходы";
 
 "userGroupInfo.users.empty.message" = "Нет пользователей";
 "userGroupInfo.addUsers.button.text" = "Добавить пользователей";
 
-"transferList.tab.name" = "Переводы";
+"expenseList.tab.name" = "Расходы";
 
-"transfers.title" = "Переводы";
-"transfers.empty.message" = "Переводов нет";
+"expenses.title" = "Расходы";
+"expenses.empty.message" = "Расходов нет";
 
-"transferGroup.addTransfer" = "Добавить перевод";
-"transferGroup.addTransferGroup" = "Добавить группу переводов";
+"expenseGroup.addExpense" = "Добавить расход";
+"expenseGroup.addExpenseGroup" = "Добавить группу расходов";
 
-"transferGroupEditing.sharedInfo.title" = "Общая информация";
-"transferGroupEditing.sharedInfo.enable.button.text" = "Добавить общую информацию";
-"transferGroupEditing.sharedInfo.disable.button.text" = "Убрать";
-"transferGroupEditing.sharedInfo.remainder.label" = "Осталось разделить";
+"expenseGroupEditing.title" = "Новая группа";
+"expenseGroupEditing.offlineCreated.description" = "Группа сохранена на устройстве";
+"expenseGroupEditing.sharedInfo.title" = "Общая информация";
+"expenseGroupEditing.sharedInfo.enable.button.text" = "Добавить общую информацию";
+"expenseGroupEditing.sharedInfo.disable.button.text" = "Убрать";
+"expenseGroupEditing.sharedInfo.remainder.label" = "Осталось разделить";
+"expenseGroupEditing.toast.error.creationError" = "Не удалось сохранить";
+"expenseGroupEditing.toast.error.updatingError" = "Не удалось сохранить";
+"expenseGroupEditing.toast.error.offlineUpdateAttempt" = "Обновление без сети невозможно";
+"expenseGroupEditing.toast.info.offlineCreated" = "Сохранено на устройстве";
 
-"transferInfoEditingView.transferName" = "Название перевода";
-"transferInfoEditingView.transferNotes" = "Заметки к переводу";
+"expenseInfoEditingView.expenseName" = "Название расхода";
+"expenseInfoEditingView.expenseNotes" = "Заметки к расходу";
 
-"newTransfer.info" = "Информация";
-"newTransfer.participant" = "Участник";
-"newTransfer.participants" = "Участники";
+"newExpense.info" = "Информация";
+"newExpense.participant" = "Участник";
+"newExpense.participants" = "Участники";
 
 "amountSplit.align" = "Выровнять";
 
-"profile.tab.name" = "Настройки";
-"profile.title" = "Профиль";
+"settings.tab.name" = "Настройки";
+"settings.title" = "Настройки";
+"settings.clearSavedData" = "Удалить сохраненные данные";
+"settings.clearSavedData.confirmationDialog.title" = "Удалить все сохраненные данные?";
+"settings.clearSavedData.confirmationDialog.description" = "Все сохраненные данные будут удалены.";
+"settings.clearSavedData.confirmationDialog.confirmationTitle" = "Удалить данные";
 
 "contacts.title" = "Контакты";
 "contacts.link.name" = "Контакты";
@@ -103,6 +136,8 @@
 "userEjectSelection.selectedSection.header" = "Выбранные";
 "userEjectSelection.allSection.header" = "Пользователи";
 
-"userSelectionPicker.notSelected" = "Не выбран";
+"singleSelector.notSelected" = "Не выбран";
+
+"userSingleSelector.selectUser" = "Выберите пользователя";
 
 "summary.subtitle" = "Итоги";

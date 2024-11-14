@@ -1,4 +1,4 @@
-import DLUtils
+import Multitool
 import SwiftUI
 
 public struct LoadableView<
@@ -37,15 +37,15 @@ FailedView: View {
 	public var body: some View {
 		switch value {
 		case .initial: initialView()
-		case .processing(let loading): loadingView(loading)
+		case .loading(_, let value): loadingView(value)
 		case .successful(let value): successfulView(value)
-		case .failed(let error): failedView(error)
+		case .failed(let error, _): failedView(error)
 		}
 	}
 
 	@ViewBuilder
-	func loadingView (_ loading: Loading<Value>) -> some View {
-		if let value = loading.previousValue {
+	func loadingView (_ value: Value?) -> some View {
+		if let value {
 			successfulView(value)
 		} else {
 			loadingView()

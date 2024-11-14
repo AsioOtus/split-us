@@ -20,13 +20,13 @@ let package = Package(
 		.package(path: "../../il-debug"),
 		.package(path: "../../il-components"),
 		.package(path: "../../../DLPackages/dl-services"),
-		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "1.8.0"),
+		.package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "1.14.0"),
 	],
 	targets: [
 		.target(
 			name: "ScreenUserGroupEditing",
 			dependencies: [
-				.product(name: "Debug", package: "il-debug"),
+				.product(name: "ILDebug", package: "il-debug"),
 				.product(name: "ILComponents", package: "il-components"),
 				.product(name: "DLServices", package: "dl-services"),
 				.product(name: "ComposableArchitecture", package: "swift-composable-architecture"),

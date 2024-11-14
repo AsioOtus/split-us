@@ -2,7 +2,6 @@ import ComposableArchitecture
 import Foundation
 import Multitool
 import DLServices
-import DLUtils
 
 // MARK: - Feature
 public enum UserGroupEditing { }
@@ -16,8 +15,8 @@ extension UserGroupEditing {
 		var userGroupName = ""
 		var isUserGroupNameValidationRequired = false
 		
-		var savingUserGroupRequest: Loadable<None> = .initial()
-		
+		var savingUserGroupRequest: Loadable<None> = .initial
+
 		public init (userGroupId: UUID) {
 			self.userGroupId = userGroupId
 		}
